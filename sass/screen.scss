@@ -3,19 +3,28 @@
 $ratio: minor-third();
 $fontSize:1.25em;
 $containerWidth: 30em;
+$headingBaselineShift: 0.15em;
 
 $headingFont: 'kepler-std-caption', serif;
 $bodyFont: 'freight-sans-pro', sans-serif;
 
 #main {
-	font-family: $bodyFont;
-	//background: url(http://baselinebg.keyes.ie?h=36) repeat;
-	background-position: center 5px;
 	@include typeup();
+	font-family: $bodyFont;
 	margin-top:$lineHeight * 4;
+
+	@media (max-width: ($containerWidth * ($fontSize/1em) + $lineHeight * 2)) {
+		width:auto;
+		padding-left:$lineHeight;
+		padding-right:$lineHeight;
+	}
 }
 
 h1,h2,h3,h4,h5,h6 {
 	font-weight:400;
 	font-family: $headingFont;
+}
+
+p {
+	color: #444;
 }

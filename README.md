@@ -26,6 +26,11 @@ Generate baseline-respecting, readable typography based on font size and line le
 
 4. Enjoy your newly generated, vertically rhythmic and readable typography.
 
+## Known Limitations
+
+* Accepts only `em` values
+* Missing settings
+
 ## License
 
 MIT License.

@@ -14,15 +14,20 @@ $base-size: $fontSize;
 // $xHeight multiplier and $fontSize combined for use in calculations
 $xRatio: $xHeight * ($fontSize / 1em);
 
+// Calculate lineheight. 
 $lineHeight: sqrt($containerWidth  * $xRatio * 0.036 + 1em) * 1em;
-$headingLineHeight: $lineHeight * 1.5;
 
-// Heading spacer mixin
-
+// Check how many line-heights needed for font size. Can return half a baseline height.
 @function headingLines($font-size) {
 	$lines: ceil(2 * $font-size / $lineHeight) / 2;
 	@return $lines;
 }
+
+/*------------------------------
+
+THE MIXIN
+
+--------------------------------*/
 
 @mixin typeup() {
 
@@ -72,14 +77,16 @@ $headingLineHeight: $lineHeight * 1.5;
 			margin-bottom:0;
 		}
 	}
+
 }
 
 @mixin heading-spacer($size-in-ems, $before: $heading-lines-before,
 	$after: $heading-lines-after,
-	$baselineShift: $heading-baseline-shift) {
+	$baselineShift: $headingBaselineShift) {
 
 	$adjust: 0em;
 
+	// If heading lineheight is not a full baseline height, adjust
 	@if (headingLines($size-in-ems)/1em) % 1 == 0.5 {
 		$adjust: (($lineHeight/ $size-in-ems) / 2) * 1em;
 	}

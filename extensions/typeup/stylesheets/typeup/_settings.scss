@@ -36,7 +36,7 @@ $heading-lines-before: 1 !default;
 $heading-lines-after: 0 !default;
 
 // Amount of baseline-shift in em (relative to heading size)
-$heading-baseline-shift:0.15em !default;
+$headingBaselineShift:0.15em !default;
 
 /*------------------------------
 Heading spacing 
@@ -45,9 +45,9 @@ Heading spacing
 // H1 Spacing settings
 $h1-lines-before: 3 !default;
 $h1-lines-after: $heading-lines-after !default;
-$h1-baseline-shift: $heading-baseline-shift !default;
+$h1-baseline-shift: $headingBaselineShift !default;
 
 // H2 Spacing settings
 $h2-lines-before: $heading-lines-before !default;
 $h2-lines-after: $heading-lines-after !default;
-$h2-baseline-shift: $heading-baseline-shift !default;
+$h2-baseline-shift: $headingBaselineShift !default;

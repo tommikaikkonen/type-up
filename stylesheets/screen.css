@@ -88,17 +88,21 @@ Heading spacing
 TYPOGRAPHY CALCULATIONS
 
 --------------------------------*/
-/* line 10, ../sass/screen.scss */
+/*------------------------------
+
+THE MIXIN
+
+--------------------------------*/
+/* line 11, ../sass/screen.scss */
 #main {
-  font-family: "freight-sans-pro", sans-serif;
-  background-position: center 5px;
   line-height: 1.60468em;
   font-size: 1.25em;
   width: 30em;
   margin: 0 auto;
+  font-family: "freight-sans-pro", sans-serif;
   margin-top: 6.41872em;
 }
-/* line 34, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 39, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h1 {
   font-size: 3.1104em;
   margin-top: 0.51591em;
@@ -107,7 +111,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.03182;
   top: -0.15em;
 }
-/* line 39, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 44, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h2 {
   font-size: 2.16em;
   margin-top: 1.11436em;
@@ -116,7 +120,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.11436;
   top: -0.15em;
 }
-/* line 43, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h3 {
   font-size: 1.8em;
   margin-top: 1.33723em;
@@ -125,7 +129,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.33723;
   top: -0.15em;
 }
-/* line 47, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 52, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h4 {
   font-size: 1.5em;
   margin-top: 1.06979em;
@@ -134,7 +138,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.06979;
   top: -0.15em;
 }
-/* line 51, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 56, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h5 {
   font-size: 1.25em;
   margin-top: 1.28374em;
@@ -143,7 +147,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.28374;
   top: -0.15em;
 }
-/* line 55, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 60, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h6 {
   font-size: 1.25em;
   font-style: italic;
@@ -153,24 +157,37 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.28374;
   top: -0.15em;
 }
-/* line 61, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 66, ../extensions/typeup/stylesheets/_typeup.scss */
 #main p {
   margin-bottom: 1.60468em;
 }
-/* line 65, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 70, ../extensions/typeup/stylesheets/_typeup.scss */
 #main blockquote {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 1.60468em;
   margin-top: 1.60468em;
   margin-bottom: 1.60468em;
 }
-/* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
 #main blockquote p:last-child {
   margin-bottom: 0;
 }
+@media (max-width: 40.70936em) {
+  /* line 11, ../sass/screen.scss */
+  #main {
+    width: auto;
+    padding-left: 1.60468em;
+    padding-right: 1.60468em;
+  }
+}
 
-/* line 18, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-family: "kepler-std-caption", serif;
+}
+
+/* line 28, ../sass/screen.scss */
+p {
+  color: #444;
 }
