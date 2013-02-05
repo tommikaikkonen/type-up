@@ -1,7 +1,3 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 17, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,88 +63,127 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 68, ../sass/screen.scss */
+/*------------------------------
+
+MAIN SETTINGS
+
+--------------------------------*/
+/*
+* This is a multiplier you can use to adjust line height,
+* particularly for fonts with very high or low x-heights.
+*/
+/*------------------------------
+
+DETAILED SETTINGS
+
+--------------------------------*/
+/*------------------------------
+Heading spacing default settings
+--------------------------------*/
+/*------------------------------
+Heading spacing 
+--------------------------------*/
+/*------------------------------
+
+TYPOGRAPHY CALCULATIONS
+
+--------------------------------*/
+/* line 105, ../extensions/typeup/stylesheets/_typeup.scss */
 body {
-  line-height: 1.50333em;
+  line-height: 1.60468em;
   font-size: 1.25em;
   font-family: "freight-sans-pro", sans-serif;
   background-position: center 5px;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 113, ../extensions/typeup/stylesheets/_typeup.scss */
 #main {
   width: 35em;
-  margin: 6.01332em auto;
+  margin: 6.41872em auto;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 118, ../extensions/typeup/stylesheets/_typeup.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-family: "kepler-std-caption", serif;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 123, ../extensions/typeup/stylesheets/_typeup.scss */
 h1 {
   font-size: 3.1104em;
-  margin-top: 1.20831em;
+  margin-top: 1.03182em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.20831;
+  line-height: 1.03182;
   top: -0.15em;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 128, ../extensions/typeup/stylesheets/_typeup.scss */
 h2 {
   font-size: 2.16em;
-  margin-top: 1.73996em;
+  margin-top: 1.85727em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.04398;
+  line-height: 1.11436;
   top: -0.15em;
 }
 
-/* line 95, ../sass/screen.scss */
+/* line 132, ../extensions/typeup/stylesheets/_typeup.scss */
 h3 {
   font-size: 1.8em;
-  margin-top: 2.08796em;
+  margin-top: 2.22872em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.25277;
+  line-height: 1.33723;
   top: -0.15em;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 136, ../extensions/typeup/stylesheets/_typeup.scss */
 h4 {
   font-size: 1.5em;
-  margin-top: 2.00444em;
+  margin-top: 2.13957em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.00222;
+  line-height: 1.06979;
   top: -0.15em;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 140, ../extensions/typeup/stylesheets/_typeup.scss */
 h5 {
   font-size: 1.25em;
-  margin-top: 2.40533em;
+  margin-top: 2.56749em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.20266;
+  line-height: 1.28374;
   top: -0.15em;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 144, ../extensions/typeup/stylesheets/_typeup.scss */
 h6 {
   font-size: 1.25em;
   font-style: italic;
-  margin-top: 2.40533em;
+  margin-top: 2.56749em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.20266;
+  line-height: 1.28374;
   top: -0.15em;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 150, ../extensions/typeup/stylesheets/_typeup.scss */
 p {
-  margin-bottom: 1.50333em;
+  margin-bottom: 1.60468em;
+}
+
+/* line 7, ../sass/screen.scss */
+body {
+  line-height: 1.60468em;
+  font-size: 1.25em;
+  font-family: "freight-sans-pro", sans-serif;
+  background-position: center 5px;
+}
+
+/* line 15, ../sass/screen.scss */
+#main {
+  width: 35em;
+  margin: 6.41872em auto;
 }

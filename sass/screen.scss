@@ -1,69 +1,8 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "compass/reset";
-@import "modular-scale";
-@import "compass/typography/vertical_rhythm";
-
-$containerWidth: 35em;
-$xHeight:1;
-$fontSize: 1.25em;
-
-
-$base-size: $fontSize; //for Modular Scale
-$xRatio: $xHeight * $fontSize;
-$ratio: minor-third();
+@import "typeup.scss";
 
 $headingFont: 'kepler-std-caption', serif;
 $bodyFont: 'freight-sans-pro', sans-serif;
-
-
-// Heading spacing default settings
-
-$heading-lines-before: 2;
-$heading-lines-after: 0;
-$heading-baseline-shift:0.15em;
-
-// H1 Spacing settings
-$h1-lines-before: 3;
-$h1-lines-after: $heading-lines-after;
-$h1-baseline-shift: $heading-baseline-shift;
-
-// H2 Spacing settings
-$h2-lines-before: $heading-lines-before;
-$h2-lines-after: $heading-lines-after;
-$h2-baseline-shift: $heading-baseline-shift;
-
-$lineHeight: sqrt($containerWidth  * $xHeight * 0.036 + 1em) * 1em;
-$headingLineHeight: $lineHeight * 1.5;
-
-// Heading spacer mixin
-
-@function headingLines($font-size) {
-	$lines: ceil(2 * $font-size / $lineHeight) / 2;
-	@return $lines;
-}
-
-@mixin heading-spacer($size-in-ems, $before: $heading-lines-before,
-	$after: $heading-lines-after,
-	$baselineShift: $heading-baseline-shift,
-	$height: $lineHeight) {
-
-	$adjust: 0em;
-
-	@if (headingLines($size-in-ems)/1em) % 1 == 0.5 {
-		$adjust: (($height/ $size-in-ems) / 2) * 1em;
-	}
-
-	margin-top:$before * ($height / $size-in-ems) * 1em + $adjust;
-	margin-bottom: $after * ($height / $size-in-ems) * 1em;
-	position:relative;
-	line-height: ($height / $size-in-ems) * headingLines($size-in-ems);
-	top: 0em - $baselineShift; 
-}
-
 
 body {
 	line-height: $lineHeight;
@@ -76,41 +15,5 @@ body {
 #main {
 	width: $containerWidth;
 	margin: $lineHeight * 4 auto;
-}
-
-h1,h2,h3,h4,h5,h6 {
-	font-weight:400;
-	font-family: $headingFont;
-}
-
-h1 {
-	font-size: ms(5);
-	@include heading-spacer(ms(5));
-}
-
-h2 {
-	font-size: ms(3);
-	@include heading-spacer(ms(3));
-}
-h3 {
-	font-size: ms(2);
-	@include heading-spacer(ms(2));
-}
-h4 {
-	font-size: ms(1);
-	@include heading-spacer(ms(1));
-}
-h5 {
-	font-size: ms(0);
-	@include heading-spacer(ms(0));
-}
-h6 {
-	font-size: ms(0);
-	font-style:italic;
-	@include heading-spacer(ms(0));
-}
-
-p {
-	margin-bottom: $lineHeight;
 }
 
