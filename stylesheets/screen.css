@@ -1,0 +1,154 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 68, ../sass/screen.scss */
+body {
+  line-height: 1.50333em;
+  font-size: 1.25em;
+  font-family: "freight-sans-pro", sans-serif;
+  background-position: center 5px;
+}
+
+/* line 76, ../sass/screen.scss */
+#main {
+  width: 35em;
+  margin: 6.01332em auto;
+}
+
+/* line 81, ../sass/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-family: "kepler-std-caption", serif;
+}
+
+/* line 86, ../sass/screen.scss */
+h1 {
+  font-size: 3.1104em;
+  margin-top: 1.20831em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.20831;
+  top: -0.15em;
+}
+
+/* line 91, ../sass/screen.scss */
+h2 {
+  font-size: 2.16em;
+  margin-top: 1.73996em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.04398;
+  top: -0.15em;
+}
+
+/* line 95, ../sass/screen.scss */
+h3 {
+  font-size: 1.8em;
+  margin-top: 2.08796em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.25277;
+  top: -0.15em;
+}
+
+/* line 99, ../sass/screen.scss */
+h4 {
+  font-size: 1.5em;
+  margin-top: 2.00444em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.00222;
+  top: -0.15em;
+}
+
+/* line 103, ../sass/screen.scss */
+h5 {
+  font-size: 1.25em;
+  margin-top: 2.40533em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.20266;
+  top: -0.15em;
+}
+
+/* line 107, ../sass/screen.scss */
+h6 {
+  font-size: 1.25em;
+  font-style: italic;
+  margin-top: 2.40533em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.20266;
+  top: -0.15em;
+}
+
+/* line 113, ../sass/screen.scss */
+p {
+  margin-bottom: 1.50333em;
+}
