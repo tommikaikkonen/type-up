@@ -26,7 +26,6 @@ $headingLineHeight: $lineHeight * 1.5;
 
 @mixin typeup() {
 
-
 	line-height: $lineHeight;
 	font-size: $fontSize;
 	width: $containerWidth;
@@ -61,6 +60,17 @@ $headingLineHeight: $lineHeight * 1.5;
 
 	p {
 		margin-bottom: $lineHeight;
+	}
+
+	blockquote {
+		background-color:rgba(0,0,0,0.2);
+		padding: $lineHeight;
+		margin-top: $lineHeight;
+		margin-bottom:$lineHeight;
+
+		p:last-child {
+			margin-bottom:0;
+		}
 	}
 }
 

@@ -93,12 +93,12 @@ TYPOGRAPHY CALCULATIONS
   font-family: "freight-sans-pro", sans-serif;
   background-position: center 5px;
   line-height: 1.60468em;
-  font-size: 1.5em;
-  width: 35em;
+  font-size: 1.25em;
+  width: 30em;
   margin: 0 auto;
   margin-top: 6.41872em;
 }
-/* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 34, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h1 {
   font-size: 3.1104em;
   margin-top: 0.51591em;
@@ -107,7 +107,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.03182;
   top: -0.15em;
 }
-/* line 40, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 39, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h2 {
   font-size: 2.16em;
   margin-top: 1.11436em;
@@ -116,7 +116,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.11436;
   top: -0.15em;
 }
-/* line 44, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 43, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h3 {
   font-size: 1.8em;
   margin-top: 1.33723em;
@@ -125,7 +125,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.33723;
   top: -0.15em;
 }
-/* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 47, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h4 {
   font-size: 1.5em;
   margin-top: 1.06979em;
@@ -134,7 +134,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.06979;
   top: -0.15em;
 }
-/* line 52, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 51, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h5 {
   font-size: 1.25em;
   margin-top: 1.28374em;
@@ -143,7 +143,7 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.28374;
   top: -0.15em;
 }
-/* line 56, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 55, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h6 {
   font-size: 1.25em;
   font-style: italic;
@@ -153,9 +153,20 @@ TYPOGRAPHY CALCULATIONS
   line-height: 1.28374;
   top: -0.15em;
 }
-/* line 62, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 61, ../extensions/typeup/stylesheets/_typeup.scss */
 #main p {
   margin-bottom: 1.60468em;
+}
+/* line 65, ../extensions/typeup/stylesheets/_typeup.scss */
+#main blockquote {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.60468em;
+  margin-top: 1.60468em;
+  margin-bottom: 1.60468em;
+}
+/* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
+#main blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 /* line 18, ../sass/screen.scss */
