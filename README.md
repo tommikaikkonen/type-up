@@ -6,19 +6,19 @@ Generate baseline-respecting, readable typography based on font size and line le
 
 1. Install extension (at the moment, copy the extensions directory to your compass project)
 2. Import in your stylesheet
-	```js
+	```scss
 	@import "typeup";
 	```
 
 3. Write your settings
-	```js
+	```scss
 	$fontSize: 1.25em;
 	$containerWidth: 35em;
 	$xHeight: 1;
 	```
 
 3. Use the mixin
-	```js
+	```scss
 	.main-wrapper {
 		@include typeup()
 	}
