@@ -1,61 +1,6 @@
-// This is your framework's main stylesheet. Use it to import all default modules.
-
 @import "modular-scale";
 @import "compass/typography/vertical_rhythm";
-
-/*------------------------------
-
-MAIN SETTINGS
-
---------------------------------*/
-
-// Base font size, in ems.
-$fontSize: 1.25em;
-
-// Container width. Depends on base font size.
-$containerWidth: 35em;
-
-/*
-* This is a multiplier you can use to adjust line height,
-* particularly for fonts with very high or low x-heights.
-*/
-$xHeight:1;
-
-// The ratio scale that modular-scale will use.
-$ratio: minor-third();
-
-/*------------------------------
-
-DETAILED SETTINGS
-
---------------------------------*/
-
-/*------------------------------
-Heading spacing default settings
---------------------------------*/
-
-// How many line-heights of margin on top of heading
-$heading-lines-before: 2;
-
-// How many line-height of margin on bottom of heading
-$heading-lines-after: 0;
-
-// Amount of baseline-shift in em (relative to heading size)
-$heading-baseline-shift:0.15em;
-
-/*------------------------------
-Heading spacing 
---------------------------------*/
-
-// H1 Spacing settings
-$h1-lines-before: 3;
-$h1-lines-after: $heading-lines-after;
-$h1-baseline-shift: $heading-baseline-shift;
-
-// H2 Spacing settings
-$h2-lines-before: $heading-lines-before;
-$h2-lines-after: $heading-lines-after;
-$h2-baseline-shift: $heading-baseline-shift;
+@import "typeup/settings";
 
 /*------------------------------
 
@@ -69,10 +14,6 @@ $base-size: $fontSize;
 // $xHeight multiplier and $fontSize combined for use in calculations
 $xRatio: $xHeight * ($fontSize / 1em);
 
-
-$headingFont: 'kepler-std-caption', serif;
-$bodyFont: 'freight-sans-pro', sans-serif;
-
 $lineHeight: sqrt($containerWidth  * $xRatio * 0.036 + 1em) * 1em;
 $headingLineHeight: $lineHeight * 1.5;
 
@@ -83,71 +24,60 @@ $headingLineHeight: $lineHeight * 1.5;
 	@return $lines;
 }
 
+@mixin typeup() {
+
+
+	line-height: $lineHeight;
+	font-size: $fontSize;
+	width: $containerWidth;
+	margin: 0 auto;
+
+	h1 {
+		font-size: ms(5);
+		@include heading-spacer(ms(5));
+	}
+
+	h2 {
+		font-size: ms(3);
+		@include heading-spacer(ms(3));
+	}
+	h3 {
+		font-size: ms(2);
+		@include heading-spacer(ms(2));
+	}
+	h4 {
+		font-size: ms(1);
+		@include heading-spacer(ms(1));
+	}
+	h5 {
+		font-size: ms(0);
+		@include heading-spacer(ms(0));
+	}
+	h6 {
+		font-size: ms(0);
+		font-style:italic;
+		@include heading-spacer(ms(0));
+	}
+
+	p {
+		margin-bottom: $lineHeight;
+	}
+}
+
 @mixin heading-spacer($size-in-ems, $before: $heading-lines-before,
 	$after: $heading-lines-after,
-	$baselineShift: $heading-baseline-shift,
-	$height: $lineHeight) {
+	$baselineShift: $heading-baseline-shift) {
 
 	$adjust: 0em;
 
 	@if (headingLines($size-in-ems)/1em) % 1 == 0.5 {
-		$adjust: (($height/ $size-in-ems) / 2) * 1em;
+		$adjust: (($lineHeight/ $size-in-ems) / 2) * 1em;
 	}
 
-	margin-top:$before * ($height / $size-in-ems) * 1em + $adjust;
-	margin-bottom: $after * ($height / $size-in-ems) * 1em;
+	margin-top:$before * ($lineHeight / $size-in-ems) * 1em + $adjust;
+	margin-bottom: $after * ($lineHeight / $size-in-ems) * 1em;
 	position:relative;
-	line-height: ($height / $size-in-ems) * headingLines($size-in-ems);
+	line-height: ($lineHeight / $size-in-ems) * headingLines($size-in-ems);
 	top: 0em - $baselineShift; 
-}
-
-
-body {
-	line-height: $lineHeight;
-	font-size: $fontSize;
-	font-family: $bodyFont;
-	//background: url(http://baselinebg.keyes.ie?h=36) repeat;
-	background-position: center 5px;
-}
-
-#main {
-	width: $containerWidth;
-	margin: $lineHeight * 4 auto;
-}
-
-h1,h2,h3,h4,h5,h6 {
-	font-weight:400;
-	font-family: $headingFont;
-}
-
-h1 {
-	font-size: ms(5);
-	@include heading-spacer(ms(5));
-}
-
-h2 {
-	font-size: ms(3);
-	@include heading-spacer(ms(3));
-}
-h3 {
-	font-size: ms(2);
-	@include heading-spacer(ms(2));
-}
-h4 {
-	font-size: ms(1);
-	@include heading-spacer(ms(1));
-}
-h5 {
-	font-size: ms(0);
-	@include heading-spacer(ms(0));
-}
-h6 {
-	font-size: ms(0);
-	font-style:italic;
-	@include heading-spacer(ms(0));
-}
-
-p {
-	margin-bottom: $lineHeight;
 }
 

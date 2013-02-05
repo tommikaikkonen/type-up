@@ -1,0 +1,53 @@
+/*------------------------------
+
+MAIN SETTINGS
+
+--------------------------------*/
+
+// Base font size, in ems.
+$fontSize: 1.25em !default;
+
+// Container width. Depends on base font size.
+$containerWidth: 35em !default;
+
+/*
+* This is a multiplier you can use to adjust line height,
+* particularly for fonts with very high or low x-heights.
+*/
+$xHeight:1 !default;
+
+// The ratio scale that modular-scale will use.
+$ratio: minor-third() !default;
+
+/*------------------------------
+
+DETAILED SETTINGS
+
+--------------------------------*/
+
+/*------------------------------
+Heading spacing default settings
+--------------------------------*/
+
+// How many line-heights of margin on top of heading
+$heading-lines-before: 1 !default;
+
+// How many line-height of margin on bottom of heading
+$heading-lines-after: 0 !default;
+
+// Amount of baseline-shift in em (relative to heading size)
+$heading-baseline-shift:0.15em !default;
+
+/*------------------------------
+Heading spacing 
+--------------------------------*/
+
+// H1 Spacing settings
+$h1-lines-before: 3 !default;
+$h1-lines-after: $heading-lines-after !default;
+$h1-baseline-shift: $heading-baseline-shift !default;
+
+// H2 Spacing settings
+$h2-lines-before: $heading-lines-before !default;
+$h2-lines-after: $heading-lines-after !default;
+$h2-baseline-shift: $heading-baseline-shift !default;

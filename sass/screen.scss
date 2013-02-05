@@ -1,19 +1,21 @@
 @import "compass/reset";
-@import "typeup.scss";
+@import "typeup";
+$ratio: minor-third();
+$fontSize:1.5em;
+$containerWidth: 35em;
 
 $headingFont: 'kepler-std-caption', serif;
 $bodyFont: 'freight-sans-pro', sans-serif;
 
-body {
-	line-height: $lineHeight;
-	font-size: $fontSize;
+#main {
 	font-family: $bodyFont;
 	//background: url(http://baselinebg.keyes.ie?h=36) repeat;
 	background-position: center 5px;
+	@include typeup();
+	margin-top:$lineHeight * 4;
 }
 
-#main {
-	width: $containerWidth;
-	margin: $lineHeight * 4 auto;
+h1,h2,h3,h4,h5,h6 {
+	font-weight:400;
+	font-family: $headingFont;
 }
-

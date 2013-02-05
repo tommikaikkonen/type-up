@@ -88,102 +88,78 @@ Heading spacing
 TYPOGRAPHY CALCULATIONS
 
 --------------------------------*/
-/* line 105, ../extensions/typeup/stylesheets/_typeup.scss */
-body {
-  line-height: 1.60468em;
-  font-size: 1.25em;
+/* line 10, ../sass/screen.scss */
+#main {
   font-family: "freight-sans-pro", sans-serif;
   background-position: center 5px;
-}
-
-/* line 113, ../extensions/typeup/stylesheets/_typeup.scss */
-#main {
+  line-height: 1.60468em;
+  font-size: 1.5em;
   width: 35em;
-  margin: 6.41872em auto;
+  margin: 0 auto;
+  margin-top: 6.41872em;
 }
-
-/* line 118, ../extensions/typeup/stylesheets/_typeup.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  font-family: "kepler-std-caption", serif;
-}
-
-/* line 123, ../extensions/typeup/stylesheets/_typeup.scss */
-h1 {
+/* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h1 {
   font-size: 3.1104em;
-  margin-top: 1.03182em;
+  margin-top: 0.51591em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.03182;
   top: -0.15em;
 }
-
-/* line 128, ../extensions/typeup/stylesheets/_typeup.scss */
-h2 {
+/* line 40, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h2 {
   font-size: 2.16em;
-  margin-top: 1.85727em;
+  margin-top: 1.11436em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.11436;
   top: -0.15em;
 }
-
-/* line 132, ../extensions/typeup/stylesheets/_typeup.scss */
-h3 {
+/* line 44, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h3 {
   font-size: 1.8em;
-  margin-top: 2.22872em;
+  margin-top: 1.33723em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.33723;
   top: -0.15em;
 }
-
-/* line 136, ../extensions/typeup/stylesheets/_typeup.scss */
-h4 {
+/* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h4 {
   font-size: 1.5em;
-  margin-top: 2.13957em;
+  margin-top: 1.06979em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.06979;
   top: -0.15em;
 }
-
-/* line 140, ../extensions/typeup/stylesheets/_typeup.scss */
-h5 {
+/* line 52, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h5 {
   font-size: 1.25em;
-  margin-top: 2.56749em;
+  margin-top: 1.28374em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.28374;
   top: -0.15em;
 }
-
-/* line 144, ../extensions/typeup/stylesheets/_typeup.scss */
-h6 {
+/* line 56, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h6 {
   font-size: 1.25em;
   font-style: italic;
-  margin-top: 2.56749em;
+  margin-top: 1.28374em;
   margin-bottom: 0em;
   position: relative;
   line-height: 1.28374;
   top: -0.15em;
 }
-
-/* line 150, ../extensions/typeup/stylesheets/_typeup.scss */
-p {
+/* line 62, ../extensions/typeup/stylesheets/_typeup.scss */
+#main p {
   margin-bottom: 1.60468em;
 }
 
-/* line 7, ../sass/screen.scss */
-body {
-  line-height: 1.60468em;
-  font-size: 1.25em;
-  font-family: "freight-sans-pro", sans-serif;
-  background-position: center 5px;
-}
-
-/* line 15, ../sass/screen.scss */
-#main {
-  width: 35em;
-  margin: 6.41872em auto;
+/* line 18, ../sass/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-family: "kepler-std-caption", serif;
 }
