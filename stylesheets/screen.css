@@ -1,68 +1,3 @@
-/* line 17, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-/* line 22, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
 /*------------------------------
 
 MAIN SETTINGS
@@ -85,109 +20,340 @@ Heading spacing
 --------------------------------*/
 /*------------------------------
 
-TYPOGRAPHY CALCULATIONS
-
---------------------------------*/
-/*------------------------------
-
 THE MIXIN
 
 --------------------------------*/
-/* line 11, ../sass/screen.scss */
-#main {
-  line-height: 1.60468em;
-  font-size: 1.25em;
-  width: 30em;
-  margin: 0 auto;
+/* line 14, ../sass/screen.scss */
+body {
+  width: 200em;
   font-family: "freight-sans-pro", sans-serif;
-  margin-top: 6.41872em;
 }
-/* line 39, ../extensions/typeup/stylesheets/_typeup.scss */
+
+/* line 19, ../sass/screen.scss */
+#main {
+  width: 35em;
+  line-height: 1.50333em;
+  font-size: 1em;
+  margin: 0 auto;
+  margin: 50px;
+  float: left;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 3.00666em;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.05)), color-stop(5%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  -webkit-background-size: 100% 1.50333em;
+  -moz-background-size: 100% 1.50333em;
+  -o-background-size: 100% 1.50333em;
+  background-size: 100% 1.50333em;
+  background-position: left top;
+}
+/* line 33, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h1 {
-  font-size: 3.1104em;
-  margin-top: 0.51591em;
+  font-size: 2.23152em;
+  margin-top: 1.01052em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.03182;
-  top: -0.15em;
+  line-height: 1.01052;
+  top: 0em;
 }
-/* line 44, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 38, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h2 {
-  font-size: 2.16em;
-  margin-top: 1.11436em;
+  font-size: 1.82579em;
+  margin-top: 1.23508em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.11436;
-  top: -0.15em;
+  line-height: 1.23508;
+  top: 0em;
+}
+/* line 43, ../extensions/typeup/stylesheets/_typeup.scss */
+#main h3 {
+  font-size: 1.49383em;
+  margin-top: 1.00636em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.00636;
+  top: 0em;
 }
 /* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
-#main h3 {
-  font-size: 1.8em;
-  margin-top: 1.33723em;
-  margin-bottom: 0em;
-  position: relative;
-  line-height: 1.33723;
-  top: -0.15em;
-}
-/* line 52, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h4 {
-  font-size: 1.5em;
-  margin-top: 1.06979em;
+  font-size: 1.22222em;
+  margin-top: 1.23em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.06979;
-  top: -0.15em;
+  line-height: 1.23;
+  top: 0em;
 }
-/* line 56, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 53, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h5 {
-  font-size: 1.25em;
-  margin-top: 1.28374em;
+  font-size: 1em;
+  margin-top: 1.50333em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.28374;
-  top: -0.15em;
+  line-height: 1.50333;
+  top: 0em;
 }
-/* line 60, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 58, ../extensions/typeup/stylesheets/_typeup.scss */
 #main h6 {
-  font-size: 1.25em;
+  font-size: 1em;
   font-style: italic;
-  margin-top: 1.28374em;
+  margin-top: 1.50333em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.28374;
-  top: -0.15em;
+  line-height: 1.50333;
+  top: 0em;
 }
-/* line 66, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 64, ../extensions/typeup/stylesheets/_typeup.scss */
 #main p {
-  margin-bottom: 1.60468em;
+  margin-top: 0;
+  margin-bottom: 1.50333em;
 }
-/* line 70, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 69, ../extensions/typeup/stylesheets/_typeup.scss */
+#main ul {
+  padding-left: 0;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+#main .intro {
+  font-size: 1.1em;
+  margin-top: 0em;
+  margin-bottom: 1.36666em;
+  position: relative;
+  line-height: 1.36666;
+  top: 0em;
+}
+/* line 78, ../extensions/typeup/stylesheets/_typeup.scss */
 #main blockquote {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 1.60468em;
-  margin-top: 1.60468em;
-  margin-bottom: 1.60468em;
+  padding: 1.50333em;
+  margin-top: 1.50333em;
+  margin-bottom: 1.50333em;
 }
-/* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
+/* line 84, ../extensions/typeup/stylesheets/_typeup.scss */
 #main blockquote p:last-child {
   margin-bottom: 0;
 }
-@media (max-width: 40.70936em) {
-  /* line 11, ../sass/screen.scss */
-  #main {
-    width: auto;
-    padding-left: 1.60468em;
-    padding-right: 1.60468em;
-  }
+
+/* line 28, ../sass/screen.scss */
+.second {
+  width: 15em;
+  line-height: 1.21902em;
+  font-size: 0.9em;
+  margin: 0 auto;
+  margin: 50px;
+  float: left;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 2.43803em;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.05)), color-stop(5%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  -webkit-background-size: 100% 1.21902em;
+  -moz-background-size: 100% 1.21902em;
+  -o-background-size: 100% 1.21902em;
+  background-size: 100% 1.21902em;
+  background-position: left top;
+}
+/* line 33, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h1 {
+  font-size: 2.00837em;
+  margin-top: 0.60697em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.21394;
+  top: 0em;
+}
+/* line 38, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h2 {
+  font-size: 1.64321em;
+  margin-top: 1.11278em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.11278;
+  top: 0em;
+}
+/* line 43, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h3 {
+  font-size: 1.34444em;
+  margin-top: 1.36006em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.36006;
+  top: 0em;
+}
+/* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h4 {
+  font-size: 1.1em;
+  margin-top: 1.1082em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.1082;
+  top: 0em;
+}
+/* line 53, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h5 {
+  font-size: 0.9em;
+  margin-top: 1.35446em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.35446;
+  top: 0em;
+}
+/* line 58, ../extensions/typeup/stylesheets/_typeup.scss */
+.second h6 {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 1.35446em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.35446;
+  top: 0em;
+}
+/* line 64, ../extensions/typeup/stylesheets/_typeup.scss */
+.second p {
+  margin-top: 0;
+  margin-bottom: 1.21902em;
+}
+/* line 69, ../extensions/typeup/stylesheets/_typeup.scss */
+.second ul {
+  padding-left: 0;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.second .intro {
+  font-size: 1.1em;
+  margin-top: 0em;
+  margin-bottom: 1.1082em;
+  position: relative;
+  line-height: 1.1082;
+  top: 0em;
+}
+/* line 78, ../extensions/typeup/stylesheets/_typeup.scss */
+.second blockquote {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.21902em;
+  margin-top: 1.21902em;
+  margin-bottom: 1.21902em;
+}
+/* line 84, ../extensions/typeup/stylesheets/_typeup.scss */
+.second blockquote p:last-child {
+  margin-bottom: 0;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
+.third {
+  width: 25em;
+  line-height: 1.53297em;
+  font-size: 1.5em;
+  margin: 0 auto;
+  margin: 50px;
+  float: left;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 3.06594em;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.05)), color-stop(5%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0) 5%);
+  -webkit-background-size: 100% 1.53297em;
+  -moz-background-size: 100% 1.53297em;
+  -o-background-size: 100% 1.53297em;
+  background-size: 100% 1.53297em;
+  background-position: left top;
+}
+/* line 33, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h1 {
+  font-size: 3.34728em;
+  margin-top: 0.68696em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.14494;
+  top: 0em;
+}
+/* line 38, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h2 {
+  font-size: 2.73868em;
+  margin-top: 0.55975em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.11949;
+  top: 0em;
+}
+/* line 43, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h3 {
+  font-size: 2.24074em;
+  margin-top: 1.0262em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.0262;
+  top: 0em;
+}
+/* line 48, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h4 {
+  font-size: 1.83333em;
+  margin-top: 1.25425em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.25425;
+  top: 0em;
+}
+/* line 53, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h5 {
+  font-size: 1.5em;
+  margin-top: 1.02198em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.02198;
+  top: 0em;
+}
+/* line 58, ../extensions/typeup/stylesheets/_typeup.scss */
+.third h6 {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-top: 1.02198em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.02198;
+  top: 0em;
+}
+/* line 64, ../extensions/typeup/stylesheets/_typeup.scss */
+.third p {
+  margin-top: 0;
+  margin-bottom: 1.53297em;
+}
+/* line 69, ../extensions/typeup/stylesheets/_typeup.scss */
+.third ul {
+  padding-left: 0;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.third .intro {
+  font-size: 1.1em;
+  margin-top: 0em;
+  margin-bottom: 1.39361em;
+  position: relative;
+  line-height: 1.39361;
+  top: 0em;
+}
+/* line 78, ../extensions/typeup/stylesheets/_typeup.scss */
+.third blockquote {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.53297em;
+  margin-top: 1.53297em;
+  margin-bottom: 1.53297em;
+}
+/* line 84, ../extensions/typeup/stylesheets/_typeup.scss */
+.third blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 46, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-family: "kepler-std-caption", serif;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 p {
   color: #444;
 }

@@ -1,27 +1,7 @@
 @import "modular-scale";
 @import "compass/typography/vertical_rhythm";
 @import "typeup/settings";
-
-/*------------------------------
-
-TYPOGRAPHY CALCULATIONS
-
---------------------------------*/
-
-// This variable is for modular-scale, copied from fontSize.
-$base-size: $fontSize; 
-
-// $xHeight multiplier and $fontSize combined for use in calculations
-$xRatio: $xHeight * ($fontSize / 1em);
-
-// Calculate lineheight. 
-$lineHeight: sqrt($containerWidth  * $xRatio * 0.036 + 1em) * 1em;
-
-// Check how many line-heights needed for font size. Can return half a baseline height.
-@function headingLines($font-size) {
-	$lines: ceil(2 * $font-size / $lineHeight) / 2;
-	@return $lines;
-}
+@import "typeup/functions";
 
 /*------------------------------
 
@@ -29,34 +9,52 @@ THE MIXIN
 
 --------------------------------*/
 
-@mixin typeup() {
-
-	line-height: $lineHeight;
+@mixin typeup-body($fontSize, $lineLength, $xHeight) {
+	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
+	line-height: $typeup-lineHeight;
 	font-size: $fontSize;
-	width: $containerWidth;
+	@include typeup($fontSize, $lineLength, $xHeight);
+}
+
+@mixin typeup-container($fontSize, $lineLength, $xHeight) {
+	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
+	width: $lineLength;
+	line-height: $typeup-lineHeight;
+	font-size:$fontSize;
 	margin: 0 auto;
+	@include typeup($fontSize, $lineLength, $xHeight);
+}
+
+@mixin typeup($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
+
+	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
+	$base-size: $fontSize;
 
 	h1 {
-		font-size: ms(5);
-		@include heading-spacer(ms(5));
+		font-size: ms(4);
+		@include heading-spacer(ms(4));
 	}
 
 	h2 {
 		font-size: ms(3);
 		@include heading-spacer(ms(3));
 	}
+
 	h3 {
 		font-size: ms(2);
 		@include heading-spacer(ms(2));
 	}
+
 	h4 {
 		font-size: ms(1);
 		@include heading-spacer(ms(1));
 	}
+
 	h5 {
 		font-size: ms(0);
 		@include heading-spacer(ms(0));
 	}
+
 	h6 {
 		font-size: ms(0);
 		font-style:italic;
@@ -64,14 +62,24 @@ THE MIXIN
 	}
 
 	p {
-		margin-bottom: $lineHeight;
+		margin-top:0;
+		margin-bottom: $typeup-lineHeight;
+	}
+
+	ul {
+		padding-left:0;
+	}
+
+	.intro {
+		font-size:1.1em;
+		@include heading-spacer(1.1em, 0, 1, 0);
 	}
 
 	blockquote {
 		background-color:rgba(0,0,0,0.2);
-		padding: $lineHeight;
-		margin-top: $lineHeight;
-		margin-bottom:$lineHeight;
+		padding: $typeup-lineHeight;
+		margin-top: $typeup-lineHeight;
+		margin-bottom:$typeup-lineHeight;
 
 		p:last-child {
 			margin-bottom:0;
@@ -80,21 +88,22 @@ THE MIXIN
 
 }
 
-@mixin heading-spacer($size-in-ems, $before: $heading-lines-before,
-	$after: $heading-lines-after,
-	$baselineShift: $headingBaselineShift) {
+@mixin heading-spacer($size-in-ems,
+		$before: $heading-lines-before,
+		$after: $heading-lines-after,
+		$baselineShift: $headingBaselineShift) {
 
 	$adjust: 0em;
 
 	// If heading lineheight is not a full baseline height, adjust
-	@if (headingLines($size-in-ems)/1em) % 1 == 0.5 {
-		$adjust: (($lineHeight/ $size-in-ems) / 2) * 1em;
+	@if (typeup-headingLines($size-in-ems)/1em) % 1 == 0.5 {
+		$adjust: (($typeup-lineHeight/ $size-in-ems) / 2) * 1em;
 	}
 
-	margin-top:$before * ($lineHeight / $size-in-ems) * 1em + $adjust;
-	margin-bottom: $after * ($lineHeight / $size-in-ems) * 1em;
+	margin-top:$before * ($typeup-lineHeight / $size-in-ems) * 1em + $adjust;
+	margin-bottom: $after * ($typeup-lineHeight / $size-in-ems) * 1em;
 	position:relative;
-	line-height: ($lineHeight / $size-in-ems) * headingLines($size-in-ems);
+	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems);
 	top: 0em - $baselineShift; 
 }
 

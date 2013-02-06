@@ -12,37 +12,39 @@
 	</head>
 	<body>
 		<div id='main'>
-<h1>Typesetting</h1>
-<p>Before you start reading this article, you might want to play with the checkboxes in the top right corner. Resize the window. Zoom in and out.</p>
-<h2>Where Are the Columns</h2>
-<p>I use a Full HD widescreen for browsing the internet. The text area covers about 20% of the screen area because text is presented in a single centered column. Multiple columns on the other hand use screen space more efficiently since the measure (or line length) can be kept in a comfortable range. Skimming is easier, since you see more content at a glance. Yet columns are rarely used online.</p>
-<p><abbr>CSS3</abbr> columns have decent implementations in browsers. But what's holding it back has more to do with laborious progressive enhancement than poor support. Using <abbr>CSS3</abbr> columns means you need to design the multi-column layout <em>and</em> the single column fallback. I did that for this page.</p>
-<p>Let's begin with an overview of how <abbr>CSS3</abbr> columns work.</p>
-<h3>CSS3 Columns</h3>
-<p><abbr>CSS3</abbr> columns take content and divide it into columns based on either the <code>column-width</code> or <code>column-count</code> <abbr>CSS</abbr>-properties. The former inserts content into a dynamic number of columns with the width you gave it. The latter distributes content in identical height to the number of columns you gave it.</p>
-<p>For articles, there's one viable option: <code>column-width</code>. If I used <code>column-count</code>, I would run into problems with longer text. It could force the reader to scroll up and down.</p>
-<p>Using <code>column-width</code> creates new columns to the right as content expands. Setting the height to something smaller than the screen height will remove the need for any up and down scrolling. Because the content expands horizontally, the only sensible solution for navigating is horizontal scrolling. This article uses a simple jQuery script to convert vertical mousewheel scrolling to horizontal.</p>
-<h2>Full Justification</h2>
-<p>Adjacent and narrow columns need full justification to look good. Full justification means aligning both left and right sides of the text. Try switching it on and off. However, full justification by itself sucks in <abbr>CSS</abbr>. And not because of what <code>text-align: justify</code> does, but what <code>hyphens: auto</code> doesn't.</p>
-<p>Hyphenation&mdash;or splitting words in to smaller units to achieve sensible line breaks&mdash;is needed to achieve a fully justified text that looks good and is readable. The <code>css3-text</code> spec that includes <code>hyphens: auto</code> is supported only by <abbr>IE</abbr> 10, Firefox 6+ and Safari 5.1+ on desktop browsers at the moment.</p>
-<h3>Cross-Browser Hyphenation with Hypher.js</h3>
-<p>When searching for a cross-browser hyphenation solution, I first came across <a href="http://code.google.com/p/hyphenator/">Hyphenator.js</a>, which did it's job, but <a href="https://github.com/bramstein/hypher">Hypher.js</a> is faster and weighs significantly less. With a <abbr>EN-US</abbr> hyphenation pattern library, Hyphenator weighs 56kB while Hypher weighs 32,7kB. You can see the hyphenation in action in this article. Try to switch hyphenation on and off from the top right corner.</p>
-<p>Using full justification without hyphenation, long words don't get broken by hyphens and get wrapped in whole to the next line. That leaves the original line sparse, hindering readability.</p>
-<h4>Working Out the Kinks</h4>
-<p>I encountered a problem with the width of column containers. If the last paragraph (or any element) inside a column container is wrapped partially to the next column, the parent container's <code>width</code> only spans until the second last column where the last element began before wrapping.</p>
-<p>To fix this, I added an invisible helper <code>div</code> with a height of <code>0px</code> to the end of the column content, got its relative position to its parent element with jQuery's <code>position()</code>, added the <code>width()</code> of the helper <code>div</code> and set that number as the <code>width</code> of the column container. Since the <code>0px</code> won't be wrapped in half, it will tell the true width of the container.</p>
-<h5>Set Column Gap to Zero</h5>
-<p>At first, I used the <code>column-gap</code> rule to space the columns out. I faced problems when I wanted to include a blockquote element that's padding would extend to the column gap. However, the column gap just covered the blockqute padding. Declaring a <code>z-index</code> didn't fix it.</p>
-<p>The solution was to set <code>column-gap</code> to <code>0</code> and add margins to elements inside the column.</p>
-<blockquote>
-<p>There is no <code>column-gap</code></p>
-</blockquote>
-<h2>Responsiveness</h2>
-<p>I implemented the responsiveness through <abbr>CSS</abbr> media queries. A dash of javascript was needed to fix the width of the column containers.</p>
-<p>Below a screen width of 980 pixels, the page turns into a single centered column layout. From there, it's just another breakpoint at 500 px where the text is set to <code>width: 95%</code> to fill the whole width of the screen.</p>
-<h2>Suitable Content for Columns</h2>
-<p>Large heading sizes don't work well with narrow columns as they take a tall portion from a single column. Moreover the measure shrinks due to the bigger font size. And because large heading sizes don't work, it's harder to use a wide range of heading levels. This article uses only <code>h1</code> and <code>h2</code>.</p>
-<p>Images should be shown between column containers, as they can be tiny inside the columns. Don't insert an image between every two columns of text though&mdash;the text can't flow over the image to the next columns, which will leave empty space to the bottom of the previous column.</p>
-<p>This, and a lot of other things, won't be a problem in the future as <a href="http://caniuse.com/css-regions"><abbr>CSS</abbr> regions are coming</a>. They allow text to flow from element to element with <code>flow-from</code> and <code>flow-into</code> <abbr>CSS</abbr> properties. Adobe has been pushing these specs, and they have an <a href="http://www.adobe.com/devnet/html5/articles/css3-regions.html">article showing the magnificent things you can do with them</a>. I can't wait.</p>		</div>
+<h1>Typeup</h1>
+<p class="intro">Typeup is a Compass extension that creates a baseline-conforming vertical rhythm for your typography based on font size and line length. You can use it to kickstart your typography on blogs and websites.</p>
+
+<p>You can also supply a <code>$xHeight</code> argument (default <code>1</code>) to finetune the baseline with fonts that have very low or high x-heights.</p>
+<h2>CSS for This Container</h2>
+<p>They are simply:</p>
+<pre><code>#main {
+    @include typeup-container(1em, 35em, 1);
+    margin: 4em;
+    float:left;
+}
+</code></pre>
+<p>The typeup-container rule gives you the vertical rhythm rules for headings 1 to 6, paragraphs, blockquotes, code elements and pre elements. It also gives the selector where it was included a width, <code>35em</code> in this case. You can use the <code>@include typeup-body($fontSize, $lineLength, $xHeight)</code> mixin to give global styles.</p>
+<h2>Features</h2>
+<ul>
+<li>Baseline shift for headings</li>
+<li>Settings for spacing</li>
+<li><a href="http://modularscale.com/">Modular scale</a> for font-sizing (you can specify the ratio)</li>
+<li>Line-height is based on line length to maintain readability at all times</li>
+</ul>		</div>
+		<div class='second'>
+<h1>Very narrow typography</h1>
+<p>Don't worry, Typeup won't let you down. Line height is shortened when text is narrow, optimizing readability. Nice!</p>
+<h2>Everything</h2>
+<p>Yes, everything.</p>
+<h3>Is Still</h3>
+<p>Very much.</p>
+<h4>Vertically</h4>
+<p>Not horizontally.</p>
+<h5>Rhythmic</h5>
+<p>Yes!</p>		</div>
+		<div class='third'>
+<h1>Typeup can be big.</h1>
+<p>Everything is still cool, don't worry!</p>		</div>
 	</body>
 </html>

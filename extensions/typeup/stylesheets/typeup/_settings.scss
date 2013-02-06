@@ -8,7 +8,7 @@ MAIN SETTINGS
 $fontSize: 1.25em !default;
 
 // Container width. Depends on base font size.
-$containerWidth: 35em !default;
+$lineLength: 35em !default;
 
 /*
 * This is a multiplier you can use to adjust line height,
@@ -17,7 +17,12 @@ $containerWidth: 35em !default;
 $xHeight:1 !default;
 
 // The ratio scale that modular-scale will use.
-$ratio: minor-third() !default;
+$ratio: golden() !default;
+
+// This variable is for modular-scale, copied from fontSize.
+$base-size: $fontSize; 
+
+$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight) !default;
 
 /*------------------------------
 

@@ -1,23 +1,46 @@
-@import "compass/reset";
 @import "typeup";
-$ratio: minor-third();
-$fontSize:1.25em;
-$containerWidth: 30em;
-$headingBaselineShift: 0.15em;
+@import "compass/layout/grid-background";
+
+$headingBaselineShift: 0em;
 
 $headingFont: 'kepler-std-caption', serif;
 $bodyFont: 'freight-sans-pro', sans-serif;
 
-#main {
-	@include typeup();
-	font-family: $bodyFont;
-	margin-top:$lineHeight * 4;
+$containerSpacing: 50px;
 
-	@media (max-width: ($containerWidth * ($fontSize/1em) + $lineHeight * 2)) {
-		width:auto;
-		padding-left:$lineHeight;
-		padding-right:$lineHeight;
-	}
+$my-ratio: 11 / 9;
+$ratio: $my-ratio;
+
+body {
+	width:200em;
+	font-family: $bodyFont;
+}
+
+#main {
+	@include typeup-container(1em, 35em, 1);
+	margin: $containerSpacing;
+	float:left;
+	border:1px solid rgba(0,0,0,0.2);
+	padding:$typeup-lineHeight * 2;
+	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
+}
+
+.second {
+	@include typeup-container(0.9em, 15em, 1);
+	margin: $containerSpacing;
+	float:left;
+	border:1px solid rgba(0,0,0,0.2);
+	padding:$typeup-lineHeight * 2;
+	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
+}
+
+.third {
+	@include typeup-container(1.5em, 25em, 1);
+	margin: $containerSpacing;
+	float:left;
+	border:1px solid rgba(0,0,0,0.2);
+	padding:$typeup-lineHeight * 2;
+	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
 }
 
 h1,h2,h3,h4,h5,h6 {
