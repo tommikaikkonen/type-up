@@ -1,3 +1,4 @@
+@import "compass/reset";
 @import "typeup";
 @import "compass/layout/grid-background";
 
@@ -19,12 +20,14 @@ body {
 
 pre {
 	background-color:rgba(0,0,0,0.1);
+	margin-top:0;
 }
 code {
 	font-family:monospace;
 }
 blockquote {
 	background-color:rgba(0,0,0,0.1);
+	margin-top:0;
 	margin-left:0;
 	margin-right:0;
 }
@@ -34,6 +37,7 @@ ul {
 }
 ol {
 	padding-left:0;
+	list-style-type:decimal;
 }
 em {
 	font-style:italic;

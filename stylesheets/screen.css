@@ -1,3 +1,68 @@
+/* line 17, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
 /*------------------------------
 
 MAIN SETTINGS
@@ -23,47 +88,50 @@ Heading spacing
 THE MIXIN
 
 --------------------------------*/
-/* line 14, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 body {
   width: 350em;
   font-family: "freight-sans-pro", sans-serif;
   color: #444;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 pre {
   background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 0;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 code {
   font-family: monospace;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 blockquote {
   background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 0;
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 ul {
   list-style-type: disc;
   padding-left: 0;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 ol {
   padding-left: 0;
+  list-style-type: decimal;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 em {
   font-style: italic;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .first {
   width: 35em;
   line-height: 1.50333em;
@@ -153,7 +221,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .second {
   width: 15em;
   line-height: 1.21902em;
@@ -243,7 +311,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .third {
   width: 25em;
   line-height: 1.53297em;
@@ -333,7 +401,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .wide {
   width: 55em;
   line-height: 1.72627em;
@@ -423,7 +491,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-family: "kepler-std-caption", serif;

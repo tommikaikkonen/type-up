@@ -26,7 +26,6 @@ When typesetting a webpage, most of the CSS rules are based on a couple of facto
 * Set baseline shift for headings with `$h[n]-baseline-shift` or for all headings with `$headingBaselineShift`. Default is `0.15em`.
 * Set how many baselines of spacing headings have with `$h[n]-lines-before` or for all headings with `$heading-lines-before`. You can do the same for after.
 * [Modular scale](http://modularscale.com/) for font-sizing, specify the ratio with `$ratio`
-* Line-height is based on line length to maintain readability
 * Headings can use half a baseline, so that line-height won't be too high or too low
 
 ## Usage
