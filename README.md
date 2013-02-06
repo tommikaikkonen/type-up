@@ -1,10 +1,17 @@
 # Type Up
 
-Typeup is a Sass mixin that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.
+Type Up is a Sass mixin that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.
 
 See [a couple of generated examples](http://tommikaikkonen.github.com/type-up/).
 
+This mixin is still very much a work in progress.
+
+## Why?
+
+When typesetting a webpage, most of the CSS rules are based on a couple of factors such as line length and the x-height of a font. They determine the line height, which determines much of the spacing (that is, if you want to respect the baseline grid at some level). If you change one of the base factors (such as font), Type Up can save you the trouble of rewriting plenty of code.
+
 ## Basic Usage in Stylesheets
+
 	```scss
 	.text-wrapper {
 		@include typeup-container($fontSize, $lineLength, $xHeight);
@@ -32,23 +39,10 @@ You can also supply a `$xHeight` argument (default `1`) to finetune the baseline
 	@import "typeup";
 	```
 
-3. Write your settings
-	```scss
-	$fontSize: 1.25em;
-	$lineLength: 35em;
-	$xHeight: 1;
-	```
-
 3. Use the mixin
 	```scss
 	.main-wrapper {
-		@include typeup($fontSize, $lineLength, $xHeight);
-	}
-	```
-	For example:
-	```scss
-	.main-wrapper {
-		@include typeup(1em, 35em, 1);
+		@include typeup-container(1em, 35em, 1);
 	}
 	```
 
@@ -58,6 +52,10 @@ You can also supply a `$xHeight` argument (default `1`) to finetune the baseline
 
 * Accepts only `em` values for `$fontSize` and `$lineLength`
 * Probably not old-browser friendly yet
+
+## Future
+
+* Breakpoints for responsive lineheight
 
 ## License
 
