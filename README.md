@@ -12,11 +12,11 @@ When typesetting a webpage, most of the CSS rules are based on a couple of facto
 
 ## Basic Usage in Stylesheets
 
-	```scss
-	.text-wrapper {
-		@include typeup-container($fontSize, $lineLength, $xHeight);
-	}
-	```
+```scss
+.text-wrapper {
+	@include typeup-container($fontSize, $lineLength, $xHeight);
+}
+```
 
 
 ## Features
@@ -26,10 +26,8 @@ When typesetting a webpage, most of the CSS rules are based on a couple of facto
 * Set baseline shift for headings with `$h[n]-baseline-shift` or for all headings with `$headingBaselineShift`. Default is `0.15em`.
 * Set how many baselines of spacing headings have with `$h[n]-lines-before` or for all headings with `$heading-lines-before`. You can do the same for after.
 * [Modular scale](http://modularscale.com/) for font-sizing, specify the ratio with `$ratio`
-* Line-height is based on line length to maintain readability at all times
-
-
-You can also supply a `$xHeight` argument (default `1`) to finetune the baseline with fonts that have very low or high x-heights.
+* Line-height is based on line length to maintain readability
+* Headings can use half a baseline, so that line-height won't be too high or too low
 
 ## Usage
 
@@ -59,5 +57,5 @@ You can also supply a `$xHeight` argument (default `1`) to finetune the baseline
 
 ## License
 
-Copyright (c) 2013 Tommi Kaikkonen
+Copyright (c) 2013 Tommi Kaikkonen,
 MIT License
