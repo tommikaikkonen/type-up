@@ -13,11 +13,11 @@
 	<body>
 		<div class='first'>
 <h1>Typeup</h1>
-<p class="intro">Typeup is a Compass extension that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.</p>
+<p class="intro">Typeup is a Sass mixin that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.</p>
 
 <h2>Basic Usage</h2>
 <pre><code>.text-wrapper {
-    @include typeup-container($fontSize, $lineLength, $xHeight)
+    @include typeup-container($fontSize, $lineLength, $xHeight);
 }
 </code></pre>
 <h2>Features</h2>
@@ -50,7 +50,6 @@ $xHeight: 1;
 <h3>Filler text, coming up!</h3>
 <p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes.</p>
 <h2>CSS for This Container</h2>
-<p>This container is made with Typeup defaults.</p>
 <pre><code>$fontSize: 0.9em;
 $lineLength: 15em;
 $xHeight: 1;
@@ -63,7 +62,12 @@ $xHeight: 1;
 				That's one small step for [a] man; one giant leap for mankind.
 
 			</blockquote>
-<p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.</p>		</div>
+<p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.</p>
+<h2>CSS for This Container</h2>
+<pre><code>$fontSize: 1em;
+$lineLength: 55em;
+$xHeight: 1;
+</code></pre>		</div>
 		<div class='third'>
 <h1>Typeup can do big.</h1>
 <p>Everything is still cool, don't worry!</p>
