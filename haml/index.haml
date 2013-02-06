@@ -9,36 +9,42 @@
 			try{Typekit.load();}catch(e){}
 		%link{ :href => "stylesheets/screen.css", :media => "screen", :rel => "stylesheet" }
 	%body
-		#main
+		.first
 			:markdown
 				# Typeup
 
-				<p class="intro">Typeup is a Compass extension that creates a baseline-conforming vertical rhythm for your typography based on font size and line length. You can use it to kickstart your typography on blogs and websites.</p>
+				<p class="intro">Typeup is a Compass extension that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.</p>
+
+				## Basic Usage
+
+					.text-wrapper {
+						@include typeup-container($fontSize, $lineLength, $xHeight)
+					}
+
+
+				## Features
+
+				* Automatically adjusts line height for readability depending on line length
+				* Adjust line height with `$xHeight` for fonts with low or high x-heights
+				* Set baseline shift for headings with `$h[n]-baseline-shift` or for all headings with `$headingBaselineShift`. Default is `0.15em`.
+				* Set how many baselines of spacing headings have with `$h[n]-lines-before` or for all headings with `$heading-lines-before`. You can do the same for after.
+				* [Modular scale](http://modularscale.com/) for font-sizing, specify the ratio with `$ratio`
+				* Line-height is based on line length to maintain readability at all times
+
 
 				You can also supply a `$xHeight` argument (default `1`) to finetune the baseline with fonts that have very low or high x-heights.
 
 				## CSS for This Container
 
-				They are simply:
+				This container is made with Typeup defaults.
 
-					#main {
-						@include typeup-container(1em, 35em, 1);
-						margin: 4em;
-						float:left;
-					}
-
-				The typeup-container rule gives you the vertical rhythm rules for headings 1 to 6, paragraphs, blockquotes, code elements and pre elements. It also gives the selector where it was included a width, `35em` in this case. You can use the `@include typeup-body($fontSize, $lineLength, $xHeight)` mixin to give global styles. 
-
-				## Features
-
-				* Baseline shift for headings
-				* Settings for spacing
-				* [Modular scale](http://modularscale.com/) for font-sizing (you can specify the ratio)
-				* Line-height is based on line length to maintain readability at all times
+					$fontSize: 1em;
+					$lineLength: 35em;
+					$xHeight: 1;
 
 		.second
 			:markdown
-				# Very narrow typography
+				# Typeup can do narrow
 
 				Don't worry, Typeup won't let you down. Line height is shortened when text is narrow, optimizing readability. Nice!
 
@@ -58,10 +64,40 @@
 
 				Yes!
 
-				
+				### Filler text, coming up!
+
+				The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes.
+
+				## CSS for This Container
+
+				This container is made with Typeup defaults.
+
+					$fontSize: 0.9em;
+					$lineLength: 15em;
+					$xHeight: 1;
+
+		.wide
+			:markdown
+				# Typeup can do wiiide.
+
+				Everything is still cool, don't worry! As you set the line length wider, Typeup compensates by widening the line height so that readability won't suffer.
+
+				### Filler text, coming up!
+
+				The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.
+
+			%blockquote
+				That's one small step for [a] man; one giant leap for mankind.
+
+			:markdown
+				The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.
 
 		.third
 			:markdown
-				# Typeup can be big.
+				# Typeup can do big.
 
 				Everything is still cool, don't worry!
+
+				### Filler text, coming up!
+
+				Since, in the long run, every planetary civilization will be endangered by impacts from space, every surviving civilization is obliged to become spacefaring--not because of exploratory or romantic zeal, but for the most practical reason imaginable: staying alive... If our long-term survival is at stake, we have a basic responsibility to our species to venture to other worlds.

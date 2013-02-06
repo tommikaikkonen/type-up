@@ -13,3 +13,64 @@
 	$lineHeight: sqrt($lineLength  * $xRatio * 0.036 + 1em) * 1em;
 	@return $lineHeight;
 }
+
+@function typeup-heading-lines-before($tag) {
+	@if $tag == h1 {
+		@return $h1-lines-before;
+	}
+	@if $tag == h2 {
+		@return $h2-lines-before;
+	}
+	@if $tag == h3 {
+		@return $h3-lines-before;
+	}
+	@if $tag == h4 {
+		@return $h4-lines-before;
+	}
+	@if $tag == h5 {
+		@return $h5-lines-before;
+	}
+	@if $tag == h6 {
+		@return $h6-lines-before;
+	}
+}
+
+@function typeup-heading-lines-after($tag) {
+	@if $tag == h1 {
+		@return $h1-lines-after;
+	}
+	@if $tag == h2 {
+		@return $h2-lines-after;
+	}
+	@if $tag == h3 {
+		@return $h3-lines-after;
+	}
+	@if $tag == h4 {
+		@return $h4-lines-after;
+	}
+	@if $tag == h5 {
+		@return $h5-lines-after;
+	}
+	@if $tag == h6 {
+		@return $h6-lines-after;	}
+}
+
+@function typeup-heading-baseline-shift($tag) {
+	@if $tag == h1 {
+		@return $h1-baseline-shift;
+	}
+	@if $tag == h2 {
+		@return $h2-baseline-shift;
+	}
+	@if $tag == h3 {
+		@return $h3-baseline-shift;
+	}
+	@if $tag == h4 {
+		@return $h4-baseline-shift;
+	}
+	@if $tag == h5 {
+		@return $h5-baseline-shift;
+	}
+	@if $tag == h6 {
+		@return $h6-baseline-shift;	}
+}

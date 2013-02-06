@@ -11,29 +11,33 @@
 		<link media='screen' href='stylesheets/screen.css' rel='stylesheet' />
 	</head>
 	<body>
-		<div id='main'>
+		<div class='first'>
 <h1>Typeup</h1>
-<p class="intro">Typeup is a Compass extension that creates a baseline-conforming vertical rhythm for your typography based on font size and line length. You can use it to kickstart your typography on blogs and websites.</p>
+<p class="intro">Typeup is a Compass extension that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.</p>
 
-<p>You can also supply a <code>$xHeight</code> argument (default <code>1</code>) to finetune the baseline with fonts that have very low or high x-heights.</p>
-<h2>CSS for This Container</h2>
-<p>They are simply:</p>
-<pre><code>#main {
-    @include typeup-container(1em, 35em, 1);
-    margin: 4em;
-    float:left;
+<h2>Basic Usage</h2>
+<pre><code>.text-wrapper {
+    @include typeup-container($fontSize, $lineLength, $xHeight)
 }
 </code></pre>
-<p>The typeup-container rule gives you the vertical rhythm rules for headings 1 to 6, paragraphs, blockquotes, code elements and pre elements. It also gives the selector where it was included a width, <code>35em</code> in this case. You can use the <code>@include typeup-body($fontSize, $lineLength, $xHeight)</code> mixin to give global styles.</p>
 <h2>Features</h2>
 <ul>
-<li>Baseline shift for headings</li>
-<li>Settings for spacing</li>
-<li><a href="http://modularscale.com/">Modular scale</a> for font-sizing (you can specify the ratio)</li>
+<li>Automatically adjusts line height for readability depending on line length</li>
+<li>Adjust line height with <code>$xHeight</code> for fonts with low or high x-heights</li>
+<li>Set baseline shift for headings with <code>$h[n]-baseline-shift</code> or for all headings with <code>$headingBaselineShift</code>. Default is <code>0.15em</code>.</li>
+<li>Set how many baselines of spacing headings have with <code>$h[n]-lines-before</code> or for all headings with <code>$heading-lines-before</code>. You can do the same for after.</li>
+<li><a href="http://modularscale.com/">Modular scale</a> for font-sizing, specify the ratio with <code>$ratio</code></li>
 <li>Line-height is based on line length to maintain readability at all times</li>
-</ul>		</div>
+</ul>
+<p>You can also supply a <code>$xHeight</code> argument (default <code>1</code>) to finetune the baseline with fonts that have very low or high x-heights.</p>
+<h2>CSS for This Container</h2>
+<p>This container is made with Typeup defaults.</p>
+<pre><code>$fontSize: 1em;
+$lineLength: 35em;
+$xHeight: 1;
+</code></pre>		</div>
 		<div class='second'>
-<h1>Very narrow typography</h1>
+<h1>Typeup can do narrow</h1>
 <p>Don't worry, Typeup won't let you down. Line height is shortened when text is narrow, optimizing readability. Nice!</p>
 <h2>Everything</h2>
 <p>Yes, everything.</p>
@@ -42,9 +46,28 @@
 <h4>Vertically</h4>
 <p>Not horizontally.</p>
 <h5>Rhythmic</h5>
-<p>Yes!</p>		</div>
+<p>Yes!</p>
+<h3>Filler text, coming up!</h3>
+<p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes.</p>
+<h2>CSS for This Container</h2>
+<p>This container is made with Typeup defaults.</p>
+<pre><code>$fontSize: 0.9em;
+$lineLength: 15em;
+$xHeight: 1;
+</code></pre>		</div>
+		<div class='wide'>
+<h1>Typeup can do wiiide.</h1>
+<p>Everything is still cool, don't worry! As you set the line length wider, Typeup compensates by widening the line height so that readability won't suffer.</p>
+<h3>Filler text, coming up!</h3>
+<p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.</p>			<blockquote>
+				That's one small step for [a] man; one giant leap for mankind.
+
+			</blockquote>
+<p>The powered flight took a total of about eight and a half minutes. It seemed to me it had gone by in a lash. We had gone from sitting still on the launch pad at the Kennedy Space Center to traveling at 17,500 miles an hour in that eight and a half minutes. It is still mind-boggling to me. I recall making some statement on the air-to-ground radio for the benefit of my fellow astronauts, who had also been in the program a long time, that it was well worth the wait.</p>		</div>
 		<div class='third'>
-<h1>Typeup can be big.</h1>
-<p>Everything is still cool, don't worry!</p>		</div>
+<h1>Typeup can do big.</h1>
+<p>Everything is still cool, don't worry!</p>
+<h3>Filler text, coming up!</h3>
+<p>Since, in the long run, every planetary civilization will be endangered by impacts from space, every surviving civilization is obliged to become spacefaring--not because of exploratory or romantic zeal, but for the most practical reason imaginable: staying alive... If our long-term survival is at stake, we have a basic responsibility to our species to venture to other worlds.</p>		</div>
 	</body>
 </html>

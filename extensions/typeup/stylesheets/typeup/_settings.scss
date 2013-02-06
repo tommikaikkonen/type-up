@@ -48,7 +48,7 @@ Heading spacing
 --------------------------------*/
 
 // H1 Spacing settings
-$h1-lines-before: 3 !default;
+$h1-lines-before: 1 !default;
 $h1-lines-after: $heading-lines-after !default;
 $h1-baseline-shift: $headingBaselineShift !default;
 
@@ -56,3 +56,23 @@ $h1-baseline-shift: $headingBaselineShift !default;
 $h2-lines-before: $heading-lines-before !default;
 $h2-lines-after: $heading-lines-after !default;
 $h2-baseline-shift: $headingBaselineShift !default;
+
+// H3 Spacing settings
+$h3-lines-before: $heading-lines-before !default;
+$h3-lines-after: $heading-lines-after !default;
+$h3-baseline-shift: $headingBaselineShift !default;
+
+// H4 Spacing settings
+$h4-lines-before: $heading-lines-before !default;
+$h4-lines-after: $heading-lines-after !default;
+$h4-baseline-shift: $headingBaselineShift !default;
+
+// H5 Spacing settings
+$h5-lines-before: $heading-lines-before !default;
+$h5-lines-after: $heading-lines-after !default;
+$h5-baseline-shift: $headingBaselineShift !default;
+
+// H6 Spacing settings
+$h6-lines-before: $heading-lines-before !default;
+$h6-lines-after: $heading-lines-after !default;
+$h6-baseline-shift: $headingBaselineShift !default;

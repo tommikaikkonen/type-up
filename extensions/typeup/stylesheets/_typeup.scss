@@ -1,5 +1,4 @@
 @import "modular-scale";
-@import "compass/typography/vertical_rhythm";
 @import "typeup/settings";
 @import "typeup/functions";
 
@@ -30,35 +29,22 @@ THE MIXIN
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
 	$base-size: $fontSize;
 
-	h1 {
-		font-size: ms(4);
-		@include heading-spacer(ms(4));
-	}
+	// Loop through heading tags
 
-	h2 {
-		font-size: ms(3);
-		@include heading-spacer(ms(3));
-	}
+	@for $i from 1 to 6 {
+		h#{$i} {
 
-	h3 {
-		font-size: ms(2);
-		@include heading-spacer(ms(2));
-	}
-
-	h4 {
-		font-size: ms(1);
-		@include heading-spacer(ms(1));
-	}
-
-	h5 {
-		font-size: ms(0);
-		@include heading-spacer(ms(0));
-	}
-
-	h6 {
-		font-size: ms(0);
-		font-style:italic;
-		@include heading-spacer(ms(0));
+			// Modular numbers run from 4 at h1 to 1 at h4, and 0 for h5 and h6
+			$modularNumber: 5 - $i;
+			@if $modularNumber == -1 {
+				$modularNumber: 0;
+			}
+			font-size: ms(#{$modularNumber});
+			@include heading-spacer(ms(#{$modularNumber}),
+									$before: typeup-heading-lines-before(h#{$i}),
+									$after: typeup-heading-lines-after(h#{$i}),
+									$baselineShift: typeup-heading-baseline-shift(h#{$i}));
+		}
 	}
 
 	p {
@@ -70,13 +56,17 @@ THE MIXIN
 		padding-left:0;
 	}
 
+	pre {
+		padding:$typeup-lineHeight;
+		margin-bottom:$typeup-lineHeight;
+	}
+
 	.intro {
 		font-size:1.1em;
 		@include heading-spacer(1.1em, 0, 1, 0);
 	}
 
 	blockquote {
-		background-color:rgba(0,0,0,0.2);
 		padding: $typeup-lineHeight;
 		margin-top: $typeup-lineHeight;
 		margin-bottom:$typeup-lineHeight;

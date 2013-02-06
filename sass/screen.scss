@@ -1,3 +1,4 @@
+@import "compass/reset";
 @import "typeup";
 @import "compass/layout/grid-background";
 
@@ -12,17 +13,33 @@ $my-ratio: 11 / 9;
 $ratio: $my-ratio;
 
 body {
-	width:200em;
+	width:350em;
 	font-family: $bodyFont;
+	color:#444;
 }
 
-#main {
+pre {
+	background-color:rgba(0,0,0,0.1);
+}
+code {
+	font-family:monospace;
+}
+blockquote {
+	background-color:rgba(0,0,0,0.1);
+}
+ul {
+	list-style-type:disc;
+}
+em {
+	font-style:italic;
+}
+
+.first {
 	@include typeup-container(1em, 35em, 1);
 	margin: $containerSpacing;
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);
 	padding:$typeup-lineHeight * 2;
-	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
 }
 
 .second {
@@ -31,7 +48,6 @@ body {
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);
 	padding:$typeup-lineHeight * 2;
-	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
 }
 
 .third {
@@ -40,14 +56,18 @@ body {
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);
 	padding:$typeup-lineHeight * 2;
-	@include baseline-grid-background($typeup-lineHeight, rgba(0,0,0,0.05));
+}
+
+.wide {
+	@include typeup-container(1em, 55em, 1);
+	margin: $containerSpacing;
+	float:left;
+	border:1px solid rgba(0,0,0,0.2);
+	padding:$typeup-lineHeight * 2;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	font-weight:400;
 	font-family: $headingFont;
-}
-
-p {
-	color: #444;
+	color:#222;
 }
