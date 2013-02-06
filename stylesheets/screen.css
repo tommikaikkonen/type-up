@@ -43,25 +43,27 @@ code {
 /* line 26, ../sass/screen.scss */
 blockquote {
   background-color: rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 ul {
   list-style-type: disc;
   padding-left: 0;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 ol {
   padding-left: 0;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 em {
   font-style: italic;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .first {
   width: 35em;
   line-height: 1.50333em;
@@ -151,7 +153,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 .second {
   width: 15em;
   line-height: 1.21902em;
@@ -241,7 +243,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 .third {
   width: 25em;
   line-height: 1.53297em;
@@ -331,7 +333,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .wide {
   width: 55em;
   line-height: 1.72627em;
@@ -421,7 +423,7 @@ em {
   margin-bottom: 0;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-family: "kepler-std-caption", serif;
