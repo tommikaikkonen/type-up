@@ -1,4 +1,3 @@
-@import "compass/reset";
 @import "typeup";
 @import "compass/layout/grid-background";
 
@@ -52,7 +51,7 @@ em {
 }
 
 .second {
-	@include typeup-container(0.9em, 15em, 1);
+	@include typeup-container(0.9em, 20em, 1);
 	margin: $containerSpacing;
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);
@@ -60,7 +59,7 @@ em {
 }
 
 .third {
-	@include typeup-container(1.5em, 25em, 1);
+	@include typeup-container(1em, 25em, 1);
 	margin: $containerSpacing;
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);
@@ -68,7 +67,7 @@ em {
 }
 
 .wide {
-	@include typeup-container(1em, 55em, 1);
+	@include typeup-container(1em, 50em, 1);
 	margin: $containerSpacing;
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);

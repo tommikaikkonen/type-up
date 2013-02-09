@@ -1,3 +1,12 @@
+/*
+* http://stackoverflow.com/questions/
+12328259/how-do-you-strip-the-unit-from-any-number-in-sass/
+12335841#12335841
+*/
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 // Check how many line-heights needed for font size. Can return half a baseline height.
 @function typeup-headingLines($font-size: $fontSize,
 								$lineHeight: $typeup-lineHeight) {
@@ -8,10 +17,37 @@
 @function typeup-calcLineHeight($fontSize: $fontSize,
 								$lineLength: $lineLength,
 								$xHeight: $xHeight) {
-	$xRatio: $xHeight * ($fontSize / 1em);
 
-	$lineHeight: sqrt($lineLength  * $xRatio * 0.036 + 1em) * 1em;
-	@return $lineHeight;
+	/*
+	* Making the variables unitless.
+	*
+	*/
+
+	$fontSizeUnitless: strip-units($fontSize);
+	$lineLengthUnitless: strip-units($lineLength);
+
+	// Calculate xRatio
+	$xRatio: $xHeight * $fontSizeUnitless;
+
+	// Calculate the proper line height.
+	$lineHeightUnitless: sqrt($lineLengthUnitless * $xRatio * 0.036 + 1);
+	// => 1.21902em
+
+	/*
+	* Moving on to pixel snapping. We don't want a line-height of 24.334571px,
+	* we want it nicely at 24px.
+	*/
+
+	// Assuming we are using 16px as base size.
+	$baseFontSize: 16px;
+
+	// Rounding the line height to nearest pixel
+	$lineHeightInPx: floor($lineHeightUnitless * $fontSizeUnitless * 16px);
+
+	// Assign the final variable with the unit stored in the beginning
+	$snappedLineHeight: ($lineHeightInPx / 16px) * $fontSize;
+
+	@return $snappedLineHeight;
 }
 
 @function typeup-heading-lines-before($tag) {

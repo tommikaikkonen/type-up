@@ -47,18 +47,25 @@ THE MIXIN
 		}
 	}
 
-	p {
-		margin-top:0;
-		margin-bottom: $typeup-lineHeight;
+	p, ul, ol, pre {
+		@include basicElementSpacer();
 	}
 
-	ul {
+	ul, ol {
 		padding-left:0;
 	}
 
 	pre {
 		padding:$typeup-lineHeight;
-		margin-bottom:$typeup-lineHeight;
+
+		code {
+			line-height: $typeup-lineHeight;
+		}
+	}
+
+	code {
+		// inline code elements mess up the line-height
+		line-height:0;
 	}
 
 	.intro {
@@ -95,5 +102,10 @@ THE MIXIN
 	position:relative;
 	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems);
 	top: 0em - $baselineShift; 
+}
+
+@mixin basicElementSpacer() {
+	margin-top:0;
+	margin-bottom:$typeup-lineHeight;
 }
 
