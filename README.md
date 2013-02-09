@@ -1,60 +1,89 @@
 # Type Up
 
-Type Up is a Sass mixin that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.
+A nifty Compass plugin for quick and precise typesetting without hours of math churning.
 
-See [a couple of generated examples](http://tommikaikkonen.github.com/type-up/).
+[See examples](http://tommikaikkonen.github.com/type-up/#examples)
 
-This mixin is still very much a work in progress.
-
-## Why?
-
-When typesetting a webpage, most of the CSS rules are based on a couple of factors such as line length and the x-height of a font. They determine the line height, which determines much of the spacing (that is, if you want to respect the baseline grid at some level). If you change one of the base factors (such as font), Type Up can save you the trouble of rewriting plenty of code.
-
-## Basic Usage in Stylesheets
-
-```scss
-.text-wrapper {
-	@include typeup-container($fontSize, $lineLength, $xHeight);
-}
-```
-
+Type Up gives you the CSS rules for beautiful vertical rhythm (line-heights, paddings, margins) based on font size and line length. Customize the details as you please or use the defaults.
 
 ## Features
 
-* Automatically adjusts line height for readability depending on line length
-* Adjust line height with `$xHeight` for fonts with low or high x-heights
-* Set baseline shift for headings with `$h[n]-baseline-shift` or for all headings with `$headingBaselineShift`. Default is `0.15em`.
-* Set how many baselines of spacing headings have with `$h[n]-lines-before` or for all headings with `$heading-lines-before`. You can do the same for after.
-* [Modular scale](http://modularscale.com/) for font-sizing, specify the ratio with `$ratio`
-* Headings can use half a baseline, so that line-height won't be too high or too low
+* Line height is based on both font size and line length for optimized readability at all measures
+* Everything is in `em`s
+* [Modular scale](https://github.com/scottkellum/modular-scale) for heading sizes
+* Headings work with half a baseline as needed
 
 ## Usage
 
-1. Install extension (at the moment, copy the extensions directory to your compass project)
-2. Import in your stylesheet
-	```scss
-	@import "typeup";
-	```
+Get started with the defaults:
+```scss
+@include typeup-body(
+	1em, /* font size */
+	35em /* line length */
+);
 
-3. Use the mixin
-	```scss
-	.main-wrapper {
-		@include typeup-container(1em, 35em, 1);
-	}
-	```
+// Your container element for text
+.text-wrapper {
+	width: 35em;
+}
+```
 
-4. Enjoy your newly generated, vertically rhythmic and readable typography.
+## Installation
 
-## Known Limitations
+1. Get the [source](http://github.com) and copy the extension folder into your [Compass](http://compass-style.org/) project
+2. Install the [Modular Scale](https://github.com/scottkellum/modular-scale) gem and require it in your Compass `config.rb` file
+3. Import Type Up in your stylesheet with `@import "typeup";`
+4. Apply styles to body with `@include typeup-body($fontSize, $lineLength, $xHeight)` or to a container with `@include typeup-container($fontSize, $lineLength, $xHeight)`
+5. Cool typesetting, bro!
 
-* Accepts only `em` values for `$fontSize` and `$lineLength`
-* Probably not old-browser friendly yet
+## Settings
 
-## Future
+Declare settings before importing typeup!
+```scss
+$h1-lines-before: 2;
+@import "typeup";
+```
+or, make a settings file:
+```scss
+@import "mytypeupsettings";
+@import "typeup";
+```
+### List of Settings
 
-* Breakpoints for responsive lineheight
+#### General Settings
+
+* `$fontSize`: the size of your font in `em`s. Default: `1em`
+* `$lineLength`: the width of your text, in `em`s. Default: `35em`
+* `$xRatio`: Use this to adjust the global line height (for example with fonts with very short or tall x-heights). Default is `1`, values between `0.5` to `1.5` should work all right.
+
+#### Heading Scale
+
+Type Up uses [Modular Scale](https://github.com/scottkellum/modular-scale) as its dependency to calculate heading sizes based on the base font size. Set the ratio used with `$ratio: golden();` or manually `$ratio: 3/2;`.
+
+#### Heading Spacing
+
+By default, each heading has 1 line-height of margin above it and 0 line-heights of margin below it. You can change these setting for all headings with
+
+* `$heading-lines-before`: the amount of line-heights as top margin for all headings unless overrided, default is `1`.
+* `$heading-lines-after` the amount of line-heights as bottom margin for all headings unless overrided, default is `0`.
+* `$headingBaselineShift`: the amount of baseline shift for all headings unless overrided in `em`s. Default is `0em`. 
+
+and for `h[n]`, you can set
+
+* `$h[n]-lines-before`: the amount of line-heights as top margin for heading *n*, default is `1`.
+
+* `$h[n]-lines-after`: the amount of line-heights as bottom margin for heading *n*, default is `1`.
+
+* `$h[n]-baseline-shift`: the amount of baseline shift for heading *n* in `em`s. Default is `0em`.
+
+## Limitations
+
+* Accepts only `em`s for font size and line length at the moment
+
+## Author
+
+Type Up is made by [Tommi Kaikkonen](http://www.kaikkonendesign.fi).
 
 ## License
 
-Copyright (c) 2013 Tommi Kaikkonen,
-MIT License
+Copyright 2013 Tommi Kaikkonen. Released under MIT License.

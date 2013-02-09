@@ -2,20 +2,22 @@
 @import "typeup/settings";
 @import "typeup/functions";
 
-/*------------------------------
+//-----------------------
+//
+// MIXINS
+//
+//-----------------------
 
-THE MIXIN
-
---------------------------------*/
-
-@mixin typeup-body($fontSize, $lineLength, $xHeight) {
+@mixin typeup-body($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
-	line-height: $typeup-lineHeight;
-	font-size: $fontSize;
+	body {
+		line-height: $typeup-lineHeight;
+		font-size: $fontSize;
+	}
 	@include typeup($fontSize, $lineLength, $xHeight);
 }
 
-@mixin typeup-container($fontSize, $lineLength, $xHeight) {
+@mixin typeup-container($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
 	width: $lineLength;
 	line-height: $typeup-lineHeight;
@@ -31,7 +33,7 @@ THE MIXIN
 
 	// Loop through heading tags
 
-	@for $i from 1 to 6 {
+	@for $i from 1 to 7 {
 		h#{$i} {
 
 			// Modular numbers run from 4 at h1 to 1 at h4, and 0 for h5 and h6

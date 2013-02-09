@@ -1,19 +1,19 @@
-/*------------------------------
-
-MAIN SETTINGS
-
---------------------------------*/
+//-----------------------
+//
+// MAIN SETTINGS
+//
+//-----------------------
 
 // Base font size, in ems.
 $fontSize: 1.25em !default;
 
-// Container width. Depends on base font size.
+// Container width. Final absolute width depends on font size.
 $lineLength: 35em !default;
 
-/*
-* This is a multiplier you can use to adjust line height,
-* particularly for fonts with very high or low x-heights.
-*/
+//
+// This is a multiplier you can use to adjust line height,
+// particularly for fonts with very high or low x-heights.
+//
 $xHeight:1 !default;
 
 // The ratio scale that modular-scale will use.
@@ -24,15 +24,15 @@ $base-size: $fontSize;
 
 $typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight) !default;
 
-/*------------------------------
+//-----------------------
+//
+// DETAILED SETTINGS
+//
+//-----------------------
 
-DETAILED SETTINGS
-
---------------------------------*/
-
-/*------------------------------
-Heading spacing default settings
---------------------------------*/
+//----------------------------------
+// Heading spacing default settings
+//----------------------------------
 
 // How many line-heights of margin on top of heading
 $heading-lines-before: 1 !default;
@@ -43,9 +43,9 @@ $heading-lines-after: 0 !default;
 // Amount of baseline-shift in em (relative to heading size)
 $headingBaselineShift:0em !default;
 
-/*------------------------------
-Heading spacing 
---------------------------------*/
+//----------------------------------
+// Heading spacing
+//----------------------------------
 
 // H1 Spacing settings
 $h1-lines-before: 1 !default;
