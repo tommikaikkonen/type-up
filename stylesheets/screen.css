@@ -150,11 +150,11 @@ em {
 }
 /* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
 .first .intro {
-  font-size: 1.1em;
+  font-size: 1.5em;
   margin-top: 0em;
-  margin-bottom: 1.36364em;
+  margin-bottom: 1em;
   position: relative;
-  line-height: 1.36364;
+  line-height: 1;
   top: 0em;
 }
 /* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
@@ -171,63 +171,63 @@ em {
 /* line 53, ../sass/screen.scss */
 .second {
   width: 20em;
-  line-height: 1.0125em;
+  line-height: 1.25em;
   font-size: 0.9em;
   margin: 0 auto;
   margin: 50px;
   float: left;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 2.025em;
+  padding: 2.5em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .second h1 {
   font-size: 2.00837em;
-  margin-top: 0.50414em;
+  margin-top: 0.6224em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.00828;
+  line-height: 1.24479;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .second h2 {
   font-size: 1.64321em;
-  margin-top: 0.61617em;
+  margin-top: 1.14106em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.23234;
+  line-height: 1.14106;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .second h3 {
   font-size: 1.34444em;
-  margin-top: 1.12965em;
+  margin-top: 1.39463em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.12965;
+  line-height: 1.39463;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .second h4 {
   font-size: 1.1em;
-  margin-top: 1.38068em;
+  margin-top: 1.13636em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.38068;
+  line-height: 1.13636;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .second h5 {
   font-size: 0.9em;
-  margin-top: 1.125em;
+  margin-top: 1.38889em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.125;
+  line-height: 1.38889;
   top: 0em;
 }
 /* line 50, ../extensions/typeup/stylesheets/_typeup.scss */
 .second p, .second ul, .second ol, .second pre {
   margin-top: 0;
-  margin-bottom: 1.0125em;
+  margin-bottom: 1.25em;
 }
 /* line 54, ../extensions/typeup/stylesheets/_typeup.scss */
 .second ul, .second ol {
@@ -235,11 +235,11 @@ em {
 }
 /* line 58, ../extensions/typeup/stylesheets/_typeup.scss */
 .second pre {
-  padding: 1.0125em;
+  padding: 1.25em;
 }
 /* line 61, ../extensions/typeup/stylesheets/_typeup.scss */
 .second pre code {
-  line-height: 1.0125em;
+  line-height: 1.25em;
 }
 /* line 66, ../extensions/typeup/stylesheets/_typeup.scss */
 .second code {
@@ -247,18 +247,18 @@ em {
 }
 /* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
 .second .intro {
-  font-size: 1.1em;
-  margin-top: 0.46023em;
-  margin-bottom: 0.92045em;
+  font-size: 1.5em;
+  margin-top: 0.41667em;
+  margin-bottom: 0.83333em;
   position: relative;
-  line-height: 1.38068;
+  line-height: 1.25;
   top: 0em;
 }
 /* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
 .second blockquote {
-  padding: 1.0125em;
-  margin-top: 1.0125em;
-  margin-bottom: 1.0125em;
+  padding: 1.25em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 /* line 81, ../extensions/typeup/stylesheets/_typeup.scss */
 .second blockquote p:last-child {
@@ -344,11 +344,11 @@ em {
 }
 /* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
 .third .intro {
-  font-size: 1.1em;
-  margin-top: 0em;
-  margin-bottom: 1.25em;
+  font-size: 1.5em;
+  margin-top: 0.45833em;
+  margin-bottom: 0.91667em;
   position: relative;
-  line-height: 1.25;
+  line-height: 1.375;
   top: 0em;
 }
 /* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
@@ -365,63 +365,63 @@ em {
 /* line 69, ../sass/screen.scss */
 .wide {
   width: 50em;
-  line-height: 1.625em;
+  line-height: 1.6875em;
   font-size: 1em;
   margin: 0 auto;
   margin: 50px;
   float: left;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 3.25em;
+  padding: 3.375em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide h1 {
   font-size: 2.23152em;
-  margin-top: 1.0923em;
+  margin-top: 1.13432em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.0923;
+  line-height: 1.13432;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide h2 {
   font-size: 1.82579em;
-  margin-top: 1.33504em;
+  margin-top: 1.38639em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.33504;
+  line-height: 1.38639;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide h3 {
   font-size: 1.49383em;
-  margin-top: 1.08781em;
+  margin-top: 1.12965em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.08781;
+  line-height: 1.12965;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide h4 {
   font-size: 1.22222em;
-  margin-top: 1.32955em;
+  margin-top: 1.38068em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.32955;
+  line-height: 1.38068;
   top: 0em;
 }
 /* line 35, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide h5 {
   font-size: 1em;
-  margin-top: 1.625em;
+  margin-top: 1.6875em;
   margin-bottom: 0em;
   position: relative;
-  line-height: 1.625;
+  line-height: 1.6875;
   top: 0em;
 }
 /* line 50, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide p, .wide ul, .wide ol, .wide pre {
   margin-top: 0;
-  margin-bottom: 1.625em;
+  margin-bottom: 1.6875em;
 }
 /* line 54, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide ul, .wide ol {
@@ -429,11 +429,11 @@ em {
 }
 /* line 58, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide pre {
-  padding: 1.625em;
+  padding: 1.6875em;
 }
 /* line 61, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide pre code {
-  line-height: 1.625em;
+  line-height: 1.6875em;
 }
 /* line 66, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide code {
@@ -441,18 +441,18 @@ em {
 }
 /* line 71, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide .intro {
-  font-size: 1.1em;
+  font-size: 1.5em;
   margin-top: 0em;
-  margin-bottom: 1.47727em;
+  margin-bottom: 1.125em;
   position: relative;
-  line-height: 1.47727;
+  line-height: 1.125;
   top: 0em;
 }
 /* line 76, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide blockquote {
-  padding: 1.625em;
-  margin-top: 1.625em;
-  margin-bottom: 1.625em;
+  padding: 1.6875em;
+  margin-top: 1.6875em;
+  margin-bottom: 1.6875em;
 }
 /* line 81, ../extensions/typeup/stylesheets/_typeup.scss */
 .wide blockquote p:last-child {

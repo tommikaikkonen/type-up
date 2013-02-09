@@ -31,7 +31,6 @@
 
 	// Calculate the proper line height.
 	$lineHeightUnitless: sqrt($lineLengthUnitless * $xRatio * 0.036 + 1);
-	// => 1.21902em
 
 	/*
 	* Moving on to pixel snapping. We don't want a line-height of 24.334571px,
@@ -42,10 +41,10 @@
 	$baseFontSize: 16px;
 
 	// Rounding the line height to nearest pixel
-	$lineHeightInPx: floor($lineHeightUnitless * $fontSizeUnitless * 16px);
+	$lineHeightInPx: round($lineHeightUnitless * $fontSizeUnitless * 16px);
 
 	// Assign the final variable with the unit stored in the beginning
-	$snappedLineHeight: ($lineHeightInPx / 16px) * $fontSize;
+	$snappedLineHeight: ($lineHeightInPx / ($fontSizeUnitless * 16px)) * 1em;
 
 	@return $snappedLineHeight;
 }

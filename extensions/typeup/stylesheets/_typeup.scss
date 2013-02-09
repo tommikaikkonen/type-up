@@ -69,8 +69,8 @@ THE MIXIN
 	}
 
 	.intro {
-		font-size:1.1em;
-		@include heading-spacer(1.1em, 0, 1, 0);
+		font-size:1.5em;
+		@include heading-spacer(1.5em, 0, 1, 0);
 	}
 
 	blockquote {
