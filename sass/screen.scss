@@ -1,14 +1,13 @@
+$headingBaselineShift: 0.15em;
 @import "typeup";
 @import "compass/layout/grid-background";
 
-$headingBaselineShift: 0em;
-
-$headingFont: 'kepler-std-caption', serif;
-$bodyFont: 'freight-sans-pro', sans-serif;
+$headingFont: 'Open Sans', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
 
 $containerSpacing: 50px;
 
-$my-ratio: 11 / 9;
+$my-ratio: golden();
 $ratio: $my-ratio;
 
 body {
@@ -43,7 +42,7 @@ em {
 }
 
 .first {
-	@include typeup-container(1em, 35em, 1);
+	@include typeup-container(16px, 500px, 1);
 	margin: $containerSpacing;
 	float:left;
 	border:1px solid rgba(0,0,0,0.2);

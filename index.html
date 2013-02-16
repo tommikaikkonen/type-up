@@ -13,58 +13,11 @@
 	<body>
 		<div class='first'>
 <h1>Type Up</h1>
-<p>Type Up is a Sass mixin that creates a baseline-conforming, vertically rhythmic and very readable typography based on <em>font size</em> and <em>line length</em>. You can use it to kickstart your typography on blogs and websites.</p>
-<p>This mixin is still very much a work in progress.</p>
-<h2>Why?</h2>
-<p>When typesetting a webpage, most of the CSS rules are based on a couple of factors such as line length and the x-height of a font. They determine the line height, which determines much of the spacing (that is, if you want to respect the baseline grid at some level). If you change one of the base factors (such as font), Type Up can save you the trouble of rewriting plenty of code.</p>
-<h2>Basic Usage in Stylesheets</h2>
-<pre><code>.text-wrapper {
-    @include typeup-container($fontSize, $lineLength, $xHeight);
-}
-</code></pre>
-<h2>Features</h2>
-<ul>
-<li>Automatically adjusts line height for readability depending on line length</li>
-<li>Adjust line height with <code>$xHeight</code> for fonts with low or high x-heights</li>
-<li>Set baseline shift for headings with <code>$h[n]-baseline-shift</code> or for all headings with <code>$headingBaselineShift</code>. Default is <code>0.15em</code>.</li>
-<li>Set how many baselines of spacing headings have with <code>$h[n]-lines-before</code> or for all headings with <code>$heading-lines-before</code>. You can do the same for after.</li>
-<li><a href="http://modularscale.com/">Modular scale</a> for font-sizing, specify the ratio with <code>$ratio</code></li>
-<li>Headings can use half a baseline, so that line-height won't be too high or too low</li>
-</ul>
-<h2>Usage</h2>
-<ol>
-<li>Install extension (at the moment, copy the extensions directory to your compass project)</li>
-<li>
-<p>Import in your stylesheet</p>
-<pre><code>@import "typeup";
-</code></pre>
-</li>
-<li>
-<p>Use the mixin</p>
-<pre><code>.main-wrapper {
-    @include typeup-container(1em, 35em, 1);
-}
-</code></pre>
-</li>
-<li>
-<p>Enjoy your newly generated, vertically rhythmic and readable typography.</p>
-</li>
-</ol>
-<h2>Known Limitations</h2>
-<ul>
-<li>Accepts only <code>em</code> values for <code>$fontSize</code> and <code>$lineLength</code></li>
-<li>Probably not old-browser friendly yet</li>
-</ul>
-<h2>Future</h2>
-<ul>
-<li>Breakpoints for responsive lineheight</li>
-</ul>
-<h2>Settings for This Container</h2>
-<p>This container is made with Type Up defaults.</p>
-<pre><code>$fontSize: 1em;
-$lineLength: 35em;
-$xHeight: 1;
-</code></pre>		</div>
+<h2>Type Up</h2>
+<h3>Type Up</h3>
+<h4>Type Up</h4>
+<h5>Type Up</h5>
+<h6>Type Up</h6>		</div>
 		<div class='second'>
 <h1>Type Up can do narrow</h1>
 <p>Line height is shortened when text is narrow, optimizing readability. Nice!</p>

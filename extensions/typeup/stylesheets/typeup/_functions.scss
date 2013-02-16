@@ -3,15 +3,36 @@
 }
 
 // Check how many line-heights needed for font size. Can return half a baseline height.
-@function typeup-headingLines($font-size: $fontSize,
-								$lineHeight: $typeup-lineHeight) {
+@function typeup-headingLines(
+	$font-size: $fontSize,
+	$lineHeight: $typeup-lineHeight
+) {
+
 	$lines: ceil(2 * $font-size / $lineHeight) / 2;
 	@return $lines;
 }
 
-@function typeup-calcLineHeight($fontSize: $fontSize,
-								$lineLength: $lineLength,
-								$xHeight: $xHeight) {
+@function typeup-convertToEms($variable, $base) {
+	@if unit($variable) == "px" {
+		$variable: ($variable/$base) * 1em;
+	}
+
+	@return $variable;
+}
+
+@function typeup-calcLineHeight(
+	$fontSize: $fontSize,
+	$lineLength: $lineLength,
+	$xHeight: $xHeight,
+	$calcPower: $calcExponent
+) {
+
+	// Assuming we are using 16px as base size.
+	$baseFontSize: 16px;
+
+	@if unit($fontSize) == "px" {
+		$fontSize: ($fontSize / $baseFontSize) * 1em; 
+	}
 
 	/*
 	* Making the variables unitless.
@@ -25,15 +46,12 @@
 	$xRatio: $xHeight * $fontSizeUnitless;
 
 	// Calculate the proper line height.
-	$lineHeightUnitless: sqrt($lineLengthUnitless * $xRatio * 0.036 + 1);
+	$lineHeightUnitless: pow(($lineLengthUnitless * 0.036), $calcExponent) * $xRatio + 0.6;
 
 	/*
 	* Moving on to pixel snapping. We don't want a line-height of 24.334571px,
 	* we want it nicely at 24px.
 	*/
-
-	// Assuming we are using 16px as base size.
-	$baseFontSize: 16px;
 
 	// Rounding the line height to nearest pixel
 	$lineHeightInPx: round($lineHeightUnitless * $fontSizeUnitless * 16px);
@@ -44,63 +62,63 @@
 	@return $snappedLineHeight;
 }
 
-@function typeup-heading-lines-before($tag) {
+@function typeup-headingLinesBefore($tag) {
 	@if $tag == h1 {
-		@return $h1-lines-before;
+		@return $h1LinesBefore;
 	}
 	@if $tag == h2 {
-		@return $h2-lines-before;
+		@return $h2LinesBefore;
 	}
 	@if $tag == h3 {
-		@return $h3-lines-before;
+		@return $h3LinesBefore;
 	}
 	@if $tag == h4 {
-		@return $h4-lines-before;
+		@return $h4LinesBefore;
 	}
 	@if $tag == h5 {
-		@return $h5-lines-before;
+		@return $h5LinesBefore;
 	}
 	@if $tag == h6 {
-		@return $h6-lines-before;
+		@return $h6LinesBefore;
 	}
 }
 
-@function typeup-heading-lines-after($tag) {
+@function typeup-headingLinesAfter($tag) {
 	@if $tag == h1 {
-		@return $h1-lines-after;
+		@return $h1LinesAfter;
 	}
 	@if $tag == h2 {
-		@return $h2-lines-after;
+		@return $h2LinesAfter;
 	}
 	@if $tag == h3 {
-		@return $h3-lines-after;
+		@return $h3LinesAfter;
 	}
 	@if $tag == h4 {
-		@return $h4-lines-after;
+		@return $h4LinesAfter;
 	}
 	@if $tag == h5 {
-		@return $h5-lines-after;
+		@return $h5LinesAfter;
 	}
 	@if $tag == h6 {
-		@return $h6-lines-after;	}
+		@return $h6LinesAfter;	}
 }
 
-@function typeup-heading-baseline-shift($tag) {
+@function typeup-headingBaselineShift($tag) {
 	@if $tag == h1 {
-		@return $h1-baseline-shift;
+		@return $h1BaselineShift;
 	}
 	@if $tag == h2 {
-		@return $h2-baseline-shift;
+		@return $h2BaselineShift;
 	}
 	@if $tag == h3 {
-		@return $h3-baseline-shift;
+		@return $h3BaselineShift;
 	}
 	@if $tag == h4 {
-		@return $h4-baseline-shift;
+		@return $h4BaselineShift;
 	}
 	@if $tag == h5 {
-		@return $h5-baseline-shift;
+		@return $h5BaselineShift;
 	}
 	@if $tag == h6 {
-		@return $h6-baseline-shift;	}
+		@return $h6BaselineShift;	}
 }

@@ -40,7 +40,7 @@ Get started with the defaults:
 
 Declare settings before importing typeup!
 ```scss
-$h1-lines-before: 2;
+$h1LinesBefore: 2;
 @import "typeup";
 ```
 or, make a settings file:
@@ -54,35 +54,35 @@ or, make a settings file:
 
 * `$fontSize`: the size of your font in `em`s. Default: `1em`
 * `$lineLength`: the width of your text, in `em`s. Default: `35em`
-* `$xRatio`: Use this to adjust the global line height (for example with fonts with very short or tall x-heights). Default is `1`, values between `0.5` to `1.5` should work all right.
+* `$xHeight`: Use this to adjust the global line height (for example with fonts with very short or tall x-heights). Default is `1`, values between `0.5` to `1.5` should work all right.
 
 #### Heading Scale
 
-Type Up uses [Modular Scale](https://github.com/scottkellum/modular-scale) as its dependency to calculate heading sizes based on the base font size. Set the ratio used with `$ratio: golden();` or manually `$ratio: 3/2;`.
+Type Up uses [Modular Scale](https://github.com/scottkellum/modular-scale) as its dependency to calculate heading sizes based on the base font size. Set the ratio used with `$ratio: golden();` or manually `$ratio: 5/4;`.
 
 #### Heading Spacing
 
-By default, each heading has 1 line-height of margin above it and 0 line-heights of margin below it. You can change these setting for all headings with
+By default, each heading is spaced with [heading's calculated line height] * 1 on top and 0 on bottom. You can change these setting for all headings with
 
-* `$heading-lines-before`: the amount of line-heights as top margin for all headings unless overrided, default is `1`.
-* `$heading-lines-after` the amount of line-heights as bottom margin for all headings unless overrided, default is `0`.
+* `$headingLinesBefore`: the amount of line-heights as top margin for all headings unless overrided, default is `1`.
+* `$headingLinesAfter` the amount of line-heights as bottom margin for all headings unless overrided, default is `0`.
 * `$headingBaselineShift`: the amount of baseline shift for all headings unless overrided in `em`s. Default is `0em`. 
 
 and for `h[n]`, you can set
 
-* `$h[n]-lines-before`: the amount of line-heights as top margin for heading *n*, default is `1`.
+* `$h[n]LinesBefore`: the amount of line-heights as top margin for heading *n*, default is `1`.
 
-* `$h[n]-lines-after`: the amount of line-heights as bottom margin for heading *n*, default is `1`.
+* `$h[n]LinesAfter`: the amount of line-heights as bottom margin for heading *n*, default is `1`.
 
-* `$h[n]-baseline-shift`: the amount of baseline shift for heading *n* in `em`s. Default is `0em`.
+* `$h[n]BaselineShift`: the amount of baseline shift for heading *n* in `em`s. Default is `0em`.
 
 ## Limitations
 
-* Accepts only `em`s for font size and line length at the moment
+* Not tested on older browsers
 
 ## Author
 
-Type Up is made by [Tommi Kaikkonen](http://www.kaikkonendesign.fi).
+Type Up is created by [Tommi Kaikkonen](http://www.kaikkonendesign.fi).
 
 ## License
 

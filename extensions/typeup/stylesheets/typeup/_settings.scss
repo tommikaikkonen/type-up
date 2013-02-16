@@ -1,3 +1,4 @@
+
 //-----------------------
 //
 // MAIN SETTINGS
@@ -5,23 +6,29 @@
 //-----------------------
 
 // Base font size, in ems.
-$fontSize: 1.25em !default;
+$fontSize: 1em !default;
 
 // Container width. Final absolute width depends on font size.
 $lineLength: 35em !default;
 
-//
 // This is a multiplier you can use to adjust line height,
 // particularly for fonts with very high or low x-heights.
-//
 $xHeight:1 !default;
 
 // The ratio scale that modular-scale will use.
-$ratio: golden() !default;
+$ratio: fourth() !default;
 
 // This variable is for modular-scale, copied from fontSize.
-$base-size: $fontSize; 
+$base-size: $fontSize;
 
+// Unless you are overriding your browser base font size,
+// there is no need to touch this.
+$baseFontSize: 16px !default;
+
+
+
+// Outputting this variable for use before applying
+// typeup-container() or typeup-body() mixins
 $typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight) !default;
 
 //-----------------------
@@ -30,15 +37,25 @@ $typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight) !def
 //
 //-----------------------
 
+// Using square root for line height calculation
+$calcExponent: 1/2;
+
 //----------------------------------
 // Heading spacing default settings
 //----------------------------------
 
+// This determines if headings have spacing relative to global
+// (paragraph text) line height (=true), or the calculated line
+// height of the heading (=false). False is recommended as it
+// maintains a solid relative spacing when the headings line height
+// is significantly larger or smaller than the global line height.
+$overrideSpacingWithBaseline: false !default;
+
 // How many line-heights of margin on top of heading
-$heading-lines-before: 1 !default;
+$headingLinesBefore: 1 !default;
 
 // How many line-height of margin on bottom of heading
-$heading-lines-after: 0 !default;
+$headingLinesAfter: 0 !default;
 
 // Amount of baseline-shift in em (relative to heading size)
 $headingBaselineShift:0em !default;
@@ -48,31 +65,31 @@ $headingBaselineShift:0em !default;
 //----------------------------------
 
 // H1 Spacing settings
-$h1-lines-before: 1 !default;
-$h1-lines-after: $heading-lines-after !default;
-$h1-baseline-shift: $headingBaselineShift !default;
+$h1LinesBefore: 1 !default;
+$h1LinesAfter: $headingLinesAfter !default;
+$h1BaselineShift: $headingBaselineShift !default;
 
 // H2 Spacing settings
-$h2-lines-before: $heading-lines-before !default;
-$h2-lines-after: $heading-lines-after !default;
-$h2-baseline-shift: $headingBaselineShift !default;
+$h2LinesBefore: $headingLinesBefore !default;
+$h2LinesAfter: $headingLinesAfter !default;
+$h2BaselineShift: $headingBaselineShift !default;
 
 // H3 Spacing settings
-$h3-lines-before: $heading-lines-before !default;
-$h3-lines-after: $heading-lines-after !default;
-$h3-baseline-shift: $headingBaselineShift !default;
+$h3LinesBefore: $headingLinesBefore !default;
+$h3LinesAfter: $headingLinesAfter !default;
+$h3BaselineShift: $headingBaselineShift !default;
 
 // H4 Spacing settings
-$h4-lines-before: $heading-lines-before !default;
-$h4-lines-after: $heading-lines-after !default;
-$h4-baseline-shift: $headingBaselineShift !default;
+$h4LinesBefore: $headingLinesBefore !default;
+$h4LinesAfter: $headingLinesAfter !default;
+$h4BaselineShift: $headingBaselineShift !default;
 
 // H5 Spacing settings
-$h5-lines-before: $heading-lines-before !default;
-$h5-lines-after: $heading-lines-after !default;
-$h5-baseline-shift: $headingBaselineShift !default;
+$h5LinesBefore: $headingLinesBefore !default;
+$h5LinesAfter: $headingLinesAfter !default;
+$h5BaselineShift: $headingBaselineShift !default;
 
 // H6 Spacing settings
-$h6-lines-before: $heading-lines-before !default;
-$h6-lines-after: $heading-lines-after !default;
-$h6-baseline-shift: $headingBaselineShift !default;
+$h6LinesBefore: $headingLinesBefore !default;
+$h6LinesAfter: $headingLinesAfter !default;
+$h6BaselineShift: $headingBaselineShift !default;

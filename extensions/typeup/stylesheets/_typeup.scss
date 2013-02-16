@@ -1,6 +1,6 @@
-@import "modular-scale";
 @import "typeup/settings";
 @import "typeup/functions";
+@import "modular-scale";
 
 //-----------------------
 //
@@ -8,25 +8,61 @@
 //
 //-----------------------
 
-@mixin typeup-body($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
+@mixin typeup-body(
+	$fontSize: $fontSize,
+	$lineLength: $lineLength,
+	$xHeight: $xHeight
+) {
+
+	// Convert everything to workable units.
+	// Input supports em and px for font size and line length,
+	// xHeight is unitless.
+	$fontSize: typeup-convertToEms($fontSize, $baseFontSize);
+
+	// Note that when we're stripping units from $fontSize, it's been converted to ems
+	$lineLength: typeup-convertToEms($lineLength, $baseFontSize * strip-units($fontSize));
+	$xHeight: strip-units($xHeight);
+
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
+
 	body {
 		line-height: $typeup-lineHeight;
 		font-size: $fontSize;
 	}
+
 	@include typeup($fontSize, $lineLength, $xHeight);
+
 }
 
-@mixin typeup-container($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
+@mixin typeup-container(
+	$fontSize: $fontSize,
+	$lineLength: $lineLength,
+	$xHeight: $xHeight
+) {
+	// Convert everything to workable units.
+	// Input supports em and px for font size and line length,
+	// xHeight is unitless.
+	$fontSize: typeup-convertToEms($fontSize, $baseFontSize);
+
+	// Note that when we're stripping units from $fontSize, it's been converted to ems
+	$lineLength: typeup-convertToEms($lineLength, $baseFontSize * strip-units($fontSize));
+	$xHeight: strip-units($xHeight);
+
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
+
 	width: $lineLength;
 	line-height: $typeup-lineHeight;
 	font-size:$fontSize;
-	margin: 0 auto;
+
 	@include typeup($fontSize, $lineLength, $xHeight);
+
 }
 
-@mixin typeup($fontSize: $fontSize, $lineLength: $lineLength, $xHeight: $xHeight) {
+@mixin typeup(
+	$fontSize: $fontSize,
+	$lineLength: $lineLength,
+	$xHeight: $xHeight
+) {
 
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
 	$base-size: $fontSize;
@@ -41,20 +77,28 @@
 			@if $modularNumber == -1 {
 				$modularNumber: 0;
 			}
+
 			font-size: ms(#{$modularNumber});
-			@include heading-spacer(ms(#{$modularNumber}),
-									$before: typeup-heading-lines-before(h#{$i}),
-									$after: typeup-heading-lines-after(h#{$i}),
-									$baselineShift: typeup-heading-baseline-shift(h#{$i}));
+
+			@include typeup-spacer(
+				ms(#{$modularNumber}),
+
+				// These functions don't have any significant logic;
+				// they just fetch the correct variable.
+				$before: typeup-headingLinesBefore(h#{$i}),
+				$after: typeup-headingLinesAfter(h#{$i}),
+				$baselineShift: typeup-headingBaselineShift(h#{$i})
+			);
 		}
 	}
 
 	p, ul, ol, pre {
-		@include basicElementSpacer();
+		margin-top:0;
+		margin-bottom:$typeup-lineHeight;
 	}
 
 	ul, ol {
-		padding-left:0;
+		padding-left:$typeup-lineHeight;
 	}
 
 	pre {
@@ -67,12 +111,10 @@
 
 	code {
 		// inline code elements mess up the line-height
-		line-height:0;
-	}
 
-	.intro {
-		font-size:1.5em;
-		@include heading-spacer(1.5em, 0, 1, 0);
+		// override this if you want to wrap your inline
+		// code with a background, like a pill
+		line-height:0;
 	}
 
 	blockquote {
@@ -87,27 +129,44 @@
 
 }
 
-@mixin heading-spacer($size-in-ems,
-		$before: $heading-lines-before,
-		$after: $heading-lines-after,
-		$baselineShift: $headingBaselineShift) {
+@mixin typeup-spacer(
+		$size-in-ems,
+		$before: $headingLinesBefore,
+		$after: $headingLinesAfter,
+		$baselineShift: $headingBaselineShift,
+		$overrideSpacingWithBaseline: $overrideSpacingWithBaseline
+		) {
 
-	$adjust: 0em;
+	@if $overrideSpacingWithBaseline == true {
 
-	// If heading lineheight is not a full baseline height, adjust
-	@if (typeup-headingLines($size-in-ems)/1em) % 1 == 0.5 {
-		$adjust: (($typeup-lineHeight/ $size-in-ems) / 2) * 1em;
+		// Here spacing is a multiple of the global typeup line-height
+
+		$adjust: 0em;
+
+		// If heading lineheight is not a full baseline height, adjust
+		@if (typeup-headingLines($size-in-ems)/1em) % 1 == 0.5 {
+			$adjust: (($typeup-lineHeight/ $size-in-ems) / 2) * 1em;
+		}
+
+		margin-top:$before * ($typeup-lineHeight / $size-in-ems) * 1em + $adjust;
+		margin-bottom: $after * ($typeup-lineHeight / $size-in-ems) * 1em;
+
+	} @else {
+
+		// Here spacing is a multiple of the headings calculated line height.
+		// This is recommended.
+
+		// For example, a heading with an absolute line-height of 80px
+		// and a $before value of 2 will receive 160px of margin-top
+
+		margin-top: $before * typeup-headingLines($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
+		margin-bottom: $after * typeup-headingLines($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
+
 	}
 
-	margin-top:$before * ($typeup-lineHeight / $size-in-ems) * 1em + $adjust;
-	margin-bottom: $after * ($typeup-lineHeight / $size-in-ems) * 1em;
 	position:relative;
 	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems);
-	top: 0em - $baselineShift; 
-}
+	top: 0em - $baselineShift;
 
-@mixin basicElementSpacer() {
-	margin-top:0;
-	margin-bottom:$typeup-lineHeight;
 }
 

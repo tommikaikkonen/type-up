@@ -1,0 +1,105 @@
+/* line 12, ../sass/blog.scss */
+body {
+  font-family: "adobe-caslon-pro", serif;
+  color: #444;
+}
+
+/* line 17, ../sass/blog.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: "freight-sans-pro", sans-serif;
+  color: #222;
+}
+
+/* line 23, ../sass/blog.scss */
+.blog-post {
+  width: 28em;
+  line-height: 1.28676em;
+  font-size: 1.7em;
+  margin: 0 auto;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h1 {
+  font-size: 2.20072em;
+  margin-top: 1.16941em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.16941;
+  top: -0.3em;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h2 {
+  font-size: 2.06317em;
+  margin-top: 1.24737em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.24737;
+  top: -0.3em;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h3 {
+  font-size: 1.93422em;
+  margin-top: 1.33052em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.33052;
+  top: -0.3em;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h4 {
+  font-size: 1.81333em;
+  margin-top: 1.06442em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.06442;
+  top: -0.3em;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h5 {
+  font-size: 1.7em;
+  margin-top: 1.13538em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.13538;
+  top: -0.3em;
+}
+/* line 73, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post h6 {
+  font-size: 1.7em;
+  margin-top: 1.13538em;
+  margin-bottom: 0em;
+  position: relative;
+  line-height: 1.13538;
+  top: -0.3em;
+}
+/* line 95, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post p, .blog-post ul, .blog-post ol, .blog-post pre {
+  margin-top: 0;
+  margin-bottom: 1.28676em;
+}
+/* line 100, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post ul, .blog-post ol {
+  padding-left: 1.28676em;
+}
+/* line 104, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post pre {
+  padding: 1.28676em;
+}
+/* line 107, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post pre code {
+  line-height: 1.28676em;
+}
+/* line 112, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post code {
+  line-height: 0;
+}
+/* line 120, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post blockquote {
+  padding: 1.28676em;
+  margin-top: 1.28676em;
+  margin-bottom: 1.28676em;
+}
+/* line 125, ../extensions/typeup/stylesheets/_typeup.scss */
+.blog-post blockquote p:last-child {
+  margin-bottom: 0;
+}
