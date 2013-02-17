@@ -165,7 +165,7 @@
 	}
 
 	position:relative;
-	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems);
+	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems) * 1em;
 	top: 0em - $baselineShift;
 
 }
