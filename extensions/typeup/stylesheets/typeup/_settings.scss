@@ -25,6 +25,13 @@ $base-size: $fontSize;
 // there is no need to touch this.
 $baseFontSize: 16px !default;
 
+// If the base font size and font size dont result in
+// a integer, snap it
+$pixelSnapBaseSize: true !default;
+
+
+$minimumLineHeight: 0.7 !default;
+
 
 
 // Outputting this variable for use before applying
@@ -37,8 +44,22 @@ $typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight) !def
 //
 //-----------------------
 
+// If true, will copy
+// heading styles to a class
+// like .heading1
+$doubleStrandedHeadingClasses: false !default;
+
+// H1 gets ms(4), h2 gets (ms3) and so on.
+// Modular scale won't go below 0, though.
+//
+// So if you put in 2 here,
+// h1 will get ms(2), h2 will get ms(1) and
+// all the rest will get ms(0)
+$startModularScaleAt: 4 !default;
+
 // Using square root for line height calculation
-$calcExponent: 1/2;
+
+$calcExponent: 1/2 !default;
 
 //----------------------------------
 // Heading spacing default settings

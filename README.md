@@ -48,33 +48,141 @@ or, make a settings file:
 @import "mytypeupsettings";
 @import "typeup";
 ```
-### List of Settings
+## List of Settings
 
-#### General Settings
+<table>
+	<tr>
+		<th>Variable</th>
+		<th>Default</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>
+			$fontSize
+		</td>
+		<td>
+			1em
+		</td>
+		<td>
+			The size of your font in ems or pixels. Pixels will be converted to ems inside Type Up.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$lineLength
+		</td>
+		<td>
+			35em
+		</td>
+		<td>
+			The width of your text, in ems or pixels. Pixels will be converted to ems inside Type Up.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$xHeight
+		</td>
+		<td>
+			1
+		</td>
+		<td>
+			Use this to adjust the global line height (for example with fonts with very short or tall x-heights).
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$ratio
+		</td>
+		<td>
+			fourth()
+		</td>
+		<td>
+			The ratio for modular scale. Can be set as a number, such as 11/10.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$headingLinesBefore
+		</td>
+		<td>
+			1
+		</td>
+		<td>
+			Multiplier for heading spacing above it. The value to be multiplied is the calculated line height of the heading.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$headingLinesAfter
+		</td>
+		<td>
+			0
+		</td>
+		<td>
+			Multiplier for heading spacing below it. The value to be multiplied is the calculated line height of the heading.
 
-* `$fontSize`: the size of your font in `em`s. Default: `1em`
-* `$lineLength`: the width of your text, in `em`s. Default: `35em`
-* `$xHeight`: Use this to adjust the global line height (for example with fonts with very short or tall x-heights). Default is `1`, values between `0.5` to `1.5` should work all right.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$headingBaselineShift
+		</td>
+		<td>
+			0em
+		</td>
+		<td>
+			The amount of baseline shift for all headings.
 
-#### Heading Scale
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$h[1-6]LinesBefore
+		</td>
+		<td>
+			$headingLinesBefore
+		</td>
+		<td>
+			Multiplier for the specific heading's spacing above. The value to be multiplied is the calculated line height of the heading.
 
-Type Up uses [Modular Scale](https://github.com/scottkellum/modular-scale) as its dependency to calculate heading sizes based on the base font size. Set the ratio used with `$ratio: golden();` or manually `$ratio: 5/4;`.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$h[1-6]LinesAfter
+		</td>
+		<td>
+			$headingLinesAfter
+		</td>
+		<td>
+			Multiplier for the specific heading's spacing below. The value to be multiplied is the calculated line height of the heading.
 
-#### Heading Spacing
+		</td>
+	</tr>
+	<tr>
+		<td>
+			$h[1-6]BaselineShift
+		</td>
+		<td>
+			$headingBaselineShift
+		</td>
+		<td>
+			The amount of baseline shift for a specific heading level.
 
-By default, each heading is spaced with [heading's calculated line height] * 1 on top and 0 on bottom. You can change these setting for all headings with
+		</td>
+	</tr>
+</table>
 
-* `$headingLinesBefore`: the amount of line-heights as top margin for all headings unless overrided, default is `1`.
-* `$headingLinesAfter` the amount of line-heights as bottom margin for all headings unless overrided, default is `0`.
-* `$headingBaselineShift`: the amount of baseline shift for all headings unless overrided in `em`s. Default is `0em`. 
+## Mixins
+```scss
+@include typeup-body($fontSize, $lineLength, $xHeight);
+```
+The typeup-body mixin should be included by itself, (not under any selector).
 
-and for `h[n]`, you can set
-
-* `$h[n]LinesBefore`: the amount of line-heights as top margin for heading *n*, default is `1`.
-
-* `$h[n]LinesAfter`: the amount of line-heights as bottom margin for heading *n*, default is `1`.
-
-* `$h[n]BaselineShift`: the amount of baseline shift for heading *n* in `em`s. Default is `0em`.
+```scss
+@include typeup-container($fontSize, $lineLength, $xHeight);
+```
+The typeup-container mixin should be used when you want the rules to apply only under a specific element. It should be included inside a selector. This mixin also establishes the width of the element with $lineLength.
 
 ## Limitations
 

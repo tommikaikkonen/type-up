@@ -19,6 +19,10 @@
 	// xHeight is unitless.
 	$fontSize: typeup-convertToEms($fontSize, $baseFontSize);
 
+	@if $pixelSnapBaseSize {
+		$fontSize: typeup-snapToPixel($fontSize);
+	}
+
 	// Note that when we're stripping units from $fontSize, it's been converted to ems
 	$lineLength: typeup-convertToEms($lineLength, $baseFontSize * strip-units($fontSize));
 	$xHeight: strip-units($xHeight);
@@ -44,15 +48,19 @@
 	// xHeight is unitless.
 	$fontSize: typeup-convertToEms($fontSize, $baseFontSize);
 
+	@if $pixelSnapBaseSize {
+		$fontSize: typeup-snapToPixel($fontSize);
+	}
+
 	// Note that when we're stripping units from $fontSize, it's been converted to ems
 	$lineLength: typeup-convertToEms($lineLength, $baseFontSize * strip-units($fontSize));
 	$xHeight: strip-units($xHeight);
 
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
 
-	width: $lineLength;
-	line-height: $typeup-lineHeight;
 	font-size:$fontSize;
+	line-height: $typeup-lineHeight;
+	width: $lineLength;
 
 	@include typeup($fontSize, $lineLength, $xHeight);
 
@@ -63,7 +71,6 @@
 	$lineLength: $lineLength,
 	$xHeight: $xHeight
 ) {
-
 	$typeup-lineHeight: typeup-calcLineHeight($fontSize, $lineLength, $xHeight);
 	$base-size: $fontSize;
 
@@ -72,8 +79,8 @@
 	@for $i from 1 to 7 {
 		h#{$i} {
 
-			// Modular numbers run from 4 at h1 to 1 at h4, and 0 for h5 and h6
-			$modularNumber: 5 - $i;
+			$modularNumber: $startModularScaleAt + 1 - $i;
+
 			@if $modularNumber == -1 {
 				$modularNumber: 0;
 			}
@@ -89,6 +96,14 @@
 				$after: typeup-headingLinesAfter(h#{$i}),
 				$baselineShift: typeup-headingBaselineShift(h#{$i})
 			);
+		}
+
+		// Get the heading styles in a class,
+		// such as .heading1
+		@if $doubleStrandedHeadingClasses == true {
+			.heading#{$i} {
+				@extend h#{$i};
+			}
 		}
 	}
 
@@ -144,7 +159,7 @@
 		$adjust: 0em;
 
 		// If heading lineheight is not a full baseline height, adjust
-		@if (typeup-headingLines($size-in-ems)/1em) % 1 == 0.5 {
+		@if (typeup-linesForFontSize($size-in-ems)/1em) % 1 == 0.5 {
 			$adjust: (($typeup-lineHeight/ $size-in-ems) / 2) * 1em;
 		}
 
@@ -159,14 +174,17 @@
 		// For example, a heading with an absolute line-height of 80px
 		// and a $before value of 2 will receive 160px of margin-top
 
-		margin-top: $before * typeup-headingLines($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
-		margin-bottom: $after * typeup-headingLines($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
+		margin-top: $before * typeup-linesForFontSize($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
+		margin-bottom: $after * typeup-linesForFontSize($size-in-ems) * ($typeup-lineHeight / $size-in-ems) * 1em;
 
 	}
 
-	position:relative;
-	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-headingLines($size-in-ems) * 1em;
-	top: 0em - $baselineShift;
+	@if $baselineShift > 0em {
+		position:relative;
+		top: 0em - $baselineShift;
+	}
+
+	line-height: ($typeup-lineHeight / $size-in-ems) * typeup-linesForFontSize($size-in-ems) * 1em;
 
 }
 

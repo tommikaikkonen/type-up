@@ -3,7 +3,7 @@
 }
 
 // Check how many line-heights needed for font size. Can return half a baseline height.
-@function typeup-headingLines(
+@function typeup-linesForFontSize(
 	$font-size: $fontSize,
 	$lineHeight: $typeup-lineHeight
 ) {
@@ -20,15 +20,32 @@
 	@return $variable;
 }
 
+// Snap to pixel and return as ems.
+@function typeup-snapToPixel(
+	$unitToSnap,
+	$baseFontSize: $baseFontSize
+) {
+	$snappedPxValue: false;
+
+	@if unit($unitToSnap) == "px" {
+		$snappedPxValue: round($unitToSnap);
+	} @else if unit($unitToSnap) == "em" {
+		$snappedPxValue: round(($unitToSnap / 1em) * $baseFontSize);
+	} @else if unitless($unitToSnap) == true {
+		$snappedPxValue: round($unitToSnap * $baseFontSize);
+	}
+
+	$returnPxValue: typeup-convertToEms($snappedPxValue, $baseFontSize);
+
+	@return $returnPxValue;
+}
+
 @function typeup-calcLineHeight(
 	$fontSize: $fontSize,
 	$lineLength: $lineLength,
 	$xHeight: $xHeight,
 	$calcPower: $calcExponent
 ) {
-
-	// Assuming we are using 16px as base size.
-	$baseFontSize: 16px;
 
 	@if unit($fontSize) == "px" {
 		$fontSize: ($fontSize / $baseFontSize) * 1em; 
@@ -42,11 +59,12 @@
 	$fontSizeUnitless: strip-units($fontSize);
 	$lineLengthUnitless: strip-units($lineLength);
 
-	// Calculate xRatio
-	$xRatio: $xHeight * $fontSizeUnitless;
-
 	// Calculate the proper line height.
-	$lineHeightUnitless: pow(($lineLengthUnitless * 0.036), $calcExponent) * $xRatio + 0.6;
+	$lineHeightUnitless: pow(($lineLengthUnitless * 0.036), $calcPower) * $xHeight + 0.3;
+
+	@if $lineHeightUnitless < $minimumLineHeight {
+		$lineHeightUnitless: $minimumLineHeight;
+	}
 
 	/*
 	* Moving on to pixel snapping. We don't want a line-height of 24.334571px,
@@ -54,13 +72,15 @@
 	*/
 
 	// Rounding the line height to nearest pixel
-	$lineHeightInPx: round($lineHeightUnitless * $fontSizeUnitless * 16px);
-
-	// Assign the final variable with the unit stored in the beginning
-	$snappedLineHeight: ($lineHeightInPx / ($fontSizeUnitless * 16px)) * 1em;
+	$snappedLineHeight: typeup-snapToPixel($lineHeightUnitless * $fontSizeUnitless) / $fontSizeUnitless;
 
 	@return $snappedLineHeight;
 }
+
+
+// Because Sass doesnt support interpolation
+// inside variable names (only selectors),
+// we're using some excellent code here.
 
 @function typeup-headingLinesBefore($tag) {
 	@if $tag == h1 {
