@@ -59,10 +59,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$fontSize`
+			$fontSize
 		</td>
 		<td>
-			`1em`
+			1em
 		</td>
 		<td>
 			The size of your font in ems or pixels. Pixels will be converted to ems inside Type Up.
@@ -70,10 +70,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$lineLength`
+			$lineLength
 		</td>
 		<td>
-			`35em`
+			35em
 		</td>
 		<td>
 			The width of your text, in ems or pixels. Pixels will be converted to ems inside Type Up.
@@ -81,10 +81,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$xHeight`
+			$xHeight
 		</td>
 		<td>
-			`1`
+			1
 		</td>
 		<td>
 			Use this to adjust the global line height (for example with fonts with very short or tall x-heights).
@@ -92,10 +92,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$ratio`
+			$ratio
 		</td>
 		<td>
-			`fourth()`
+			fourth()
 		</td>
 		<td>
 			The ratio for modular scale. Can be set as a number, such as 11/10.
@@ -103,10 +103,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$headingLinesBefore`
+			$headingLinesBefore
 		</td>
 		<td>
-			`1`
+			1
 		</td>
 		<td>
 			Multiplier for heading spacing above it. The value to be multiplied is the calculated line height of the heading.
@@ -114,10 +114,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$headingLinesAfter`
+			$headingLinesAfter
 		</td>
 		<td>
-			`0`
+			0
 		</td>
 		<td>
 			Multiplier for heading spacing below it. The value to be multiplied is the calculated line height of the heading.
@@ -126,10 +126,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$headingBaselineShift`
+			$headingBaselineShift
 		</td>
 		<td>
-			`0em`
+			0em
 		</td>
 		<td>
 			The amount of baseline shift for all headings.
@@ -138,10 +138,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$h[1-6]LinesBefore`
+			$h[1-6]LinesBefore
 		</td>
 		<td>
-			`$headingLinesBefore`
+			$headingLinesBefore
 		</td>
 		<td>
 			Multiplier for the specific heading's spacing above. The value to be multiplied is the calculated line height of the heading.
@@ -150,10 +150,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$h[1-6]LinesAfter`
+			$h[1-6]LinesAfter
 		</td>
 		<td>
-			`$headingLinesAfter`
+			$headingLinesAfter
 		</td>
 		<td>
 			Multiplier for the specific heading's spacing below. The value to be multiplied is the calculated line height of the heading.
@@ -162,10 +162,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$h[1-6]BaselineShift`
+			$h[1-6]BaselineShift
 		</td>
 		<td>
-			`$headingBaselineShift`
+			$headingBaselineShift
 		</td>
 		<td>
 			The amount of baseline shift for a specific heading level.
@@ -174,7 +174,7 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$pixelSnapBaseSize: true`
+			$pixelSnapBaseSize: true
 		</td>
 		<td>
 			true
@@ -186,10 +186,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$baseFontSize`
+			$baseFontSize
 		</td>
 		<td>
-			`16px`
+			16px
 		</td>
 		<td>
 			The browser base font size that TypeUp does its calculations from. You shouldn't have to change this.
@@ -197,10 +197,10 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$minimumLineHeight`
+			$minimumLineHeight
 		</td>
 		<td>
-			`0.7`
+			0.7
 		</td>
 		<td>
 			The minimum line height that TypeUp sets for any element. Unless you're working with some funky typesetting, you don't need to change this.
@@ -208,24 +208,24 @@ or, make a settings file:
 	</tr>
 	<tr>
 		<td>
-			`$doubleStrandedHeadingClasses`
+			$doubleStrandedHeadingClasses
 		</td>
 		<td>
-			`false`
+			false
 		</td>
 		<td>
-			If set to `true`, will clone each headings styles into a corresponding `.headingN` class using `@extend`.
+			If set to true, will clone each headings styles into a corresponding .headingN class using @extend.
 		</td>
 	</tr>
 	<tr>
 		<td>
-			`$startModularScaleAt`
+			$startModularScaleAt
 		</td>
 		<td>
-			`4`
+			4
 		</td>
 		<td>
-			The modular scale number that is assigned to `h1`. Next one gets 3, next one gets 2, etc. The modular scale cuts off at 0, so with the default settings `h5` and `h6` get a modular scale number of 0.
+			The modular scale number that is assigned to h1. Next one gets 3, next one gets 2, etc. The modular scale cuts off at 0, so with the default settings h5 and h6 get a modular scale number of 0.
 		</td>
 	</tr>
 </table>
