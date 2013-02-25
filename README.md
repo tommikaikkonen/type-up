@@ -31,11 +31,10 @@ Get started with the defaults:
 
 ## Installation
 
-1. Get the [source](https://github.com/tommikaikkonen/type-up) and copy the extension folder into your [Compass](http://compass-style.org/) project
-2. Install the [Modular Scale](https://github.com/scottkellum/modular-scale) gem and require it in your Compass `config.rb` file
-3. Import Type Up in your stylesheet with `@import "typeup";`
-4. Apply styles to body with `@include typeup-body($fontSize, $lineLength, $xHeight)` or to a container with `@include typeup-container($fontSize, $lineLength, $xHeight)`
-5. Cool typesetting, bro!
+1. Install the gem with `gem install typeup`
+2. Import Type Up in your stylesheet with `@import "typeup";`
+3. Apply styles to body with `@include typeup-body($fontSize, $lineLength, $xHeight)` or to a container with `@include typeup-container($fontSize, $lineLength, $xHeight)`
+4. Cool typesetting, bro!
 
 ## Settings
 
