@@ -81,7 +81,7 @@
 
 			$modularNumber: $startModularScaleAt + 1 - $i;
 
-			@if $modularNumber == -1 {
+			@if $modularNumber < 0 {
 				$modularNumber: 0;
 			}
 
@@ -122,14 +122,6 @@
 		code {
 			line-height: $typeup-lineHeight;
 		}
-	}
-
-	code {
-		// inline code elements mess up the line-height
-
-		// override this if you want to wrap your inline
-		// code with a background, like a pill
-		line-height:0;
 	}
 
 	blockquote {
