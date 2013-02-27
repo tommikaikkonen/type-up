@@ -344,7 +344,7 @@ a {
 
   /* line 207, screen.css.scss */
   .gif-screen {
-    background: url(images/typeup-optimized3.gif);
+    background: url(../images/typeup-optimized3.gif);
     height: 20em;
     background-size: 100% auto;
     border-width: 1px;
