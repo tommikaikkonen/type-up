@@ -1,8 +1,8 @@
 # Type Up
 
-A nifty Compass plugin for quick and precise typesetting without hours of math churning.
+[See more](http://tommikaikkonen.github.com/type-up/) and read [the docs](http://tommikaikkonen.github.com/type-up/documentation/) on the website.
 
-[See examples](http://tommikaikkonen.github.com/type-up/#examples)
+A nifty Compass plugin for quick and precise typesetting without hours of math churning.
 
 Type Up gives you the CSS rules for beautiful vertical rhythm (line-heights, paddings, margins) based on font size and line length. Customize the details as you please or use the defaults.
 
