@@ -105,6 +105,12 @@
         <a href='#typeupspacer'>typeup-spacer()</a>
       </li>
     </ul>
+    <div class='heading4'>Public Variables</div>
+    <ul>
+      <li>
+        <a href='#typeuplineheight'>$typeup-lineHeight</a>
+      </li>
+    </ul>
   </nav>
   <section class='section docs-wrapper'>
     <h2 id='installation'>Installation</h2>
@@ -318,6 +324,12 @@
     </ol>
     
     <p>You could use the mixin to make simple paragraphs: <code>@include typeup-spacer($fontSize, 0, 1, 0, false);</code> which would apply a line-height and some margin to the bottom. Or any other element where you have a differing font size - line height will be adjusted correctly.</p>
+    
+    <h2 id='public_variables'>Public Variables</h2>
+    
+    <h3 id='typeuplineheight'>$typeup-lineHeight</h3>
+    
+    <p>When you <code>@import &quot;typeup&quot;</code>, the <code>$typeup-lineHeight</code> variable (line height in <code>em</code>s) is put in the global namespace. You can use it to establish spacing for other elements. When you <code>@include typeup-container()</code> or <code>@include typeup-body()</code> the variable is overwritten with the new calculated lineHeight.</p>
   </section>
 </div>
     <!-- = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" -->
