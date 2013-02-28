@@ -98,18 +98,19 @@ pre code {
   padding-left: 1em;
   padding-right: 1em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 2.75em; }
   /* line 38, ../../../../.rvm/gems/ruby-1.9.3-p374@normal/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .docs-container:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 34, docs.css.scss */
+/* line 35, docs.css.scss */
 .nav {
   display: none; }
 
-/* line 38, docs.css.scss */
+/* line 39, docs.css.scss */
 .docs-wrapper, .title {
   width: 100%;
   float: right;
@@ -119,34 +120,34 @@ pre code {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 44, docs.css.scss */
+/* line 45, docs.css.scss */
 .logo {
   font-size: 1.77778em;
   margin-top: 0; }
 
-/* line 49, docs.css.scss */
+/* line 50, docs.css.scss */
 .title h1, .title .heading1 {
   margin-top: 0;
   line-height: 3.48047; }
 
-/* line 54, docs.css.scss */
+/* line 55, docs.css.scss */
 .docs-wrapper h2:first-child, .docs-wrapper .heading2:first-child {
   margin-top: 0; }
 
 @media (min-width: 44em) {
-  /* line 60, docs.css.scss */
+  /* line 61, docs.css.scss */
   .logo {
     font-size: 1.77778em;
     line-height: 6.1875; }
 
-  /* line 65, docs.css.scss */
+  /* line 66, docs.css.scss */
   .logo, .nav {
     display: block;
     width: 38.77551%;
     float: left;
     margin-right: 2.04082%; }
 
-  /* line 70, docs.css.scss */
+  /* line 71, docs.css.scss */
   .docs-wrapper, .title {
     width: 59.18367%;
     float: right;
