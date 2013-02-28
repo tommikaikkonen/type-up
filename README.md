@@ -32,7 +32,8 @@ Get started with the defaults:
 ## Installation
 
 1. Install the gem with `gem install typeup`
-2. Import Type Up in your stylesheet with `@import "typeup";`
+2. Require TypeUp in your config.rb with `require "typeup"`
+2. Import TypeUp in your stylesheet with `@import "typeup";`
 3. Apply styles to body with `@include typeup-body($fontSize, $lineLength, $xHeight)` or to a container with `@include typeup-container($fontSize, $lineLength, $xHeight)`
 4. Cool typesetting, bro!
 
